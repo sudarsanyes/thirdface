@@ -1,0 +1,1588 @@
+[ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 3; ]
+import Toybox.System;
+[ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 4; ]
+import Toybox.WatchUi;
+[ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 5; ]
+using Toybox.Time.Gregorian;
+[ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 7; ]
+class thirdfaceView extends WatchUi.WatchFace{
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 9; @position = 8; ]
+    var bg;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 10; @position = 8; ]
+    var t1;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 10; @position = 12; ]
+    var t2;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 10; @position = 16; ]
+    var f1;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 10; @position = 20; ]
+    var f2;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 11; @position = 8; ]
+    var faceRadius;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 11; @position = 20; ]
+    var viewWidth;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 11; @position = 31; ]
+    var viewHeight;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 11; @position = 43; ]
+    var viewXCenter;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 11; @position = 56; ]
+    var viewYCenter;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 12; @position = 8; ]
+    var hrIterator;
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 14; ]
+    function initialize() as Void {
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_14_26_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 15 8 ]
+        %tmp.2 = getv ? :WatchFace;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_14_26_stop:
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 19; ]
+    function onLayout(dc as Dc) as Void {
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_19_40_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 20 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        %tmp.4 = getv ? :Rez;
+        %tmp.5 = getv %tmp.4 :Layouts;
+        %tmp.6 = getv function %tmp.5 :WatchFace;
+        %tmp.8 = lgetv %dc;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        invoke %tmp.1 %tmp.2(%tmp.9);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 21 8 ]
+        %tmp.10 = getm $.Toybox.WatchUi;
+        %tmp.11 = getv function %tmp.10 :loadResource;
+        %tmp.13 = getv ? :Rez;
+        %tmp.14 = getv %tmp.13 :Drawables;
+        %tmp.15 = getv %tmp.14 :bgImage;
+        %tmp.16 = invoke %tmp.10 %tmp.11(%tmp.15);
+        putv self :bg %tmp.16;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 22 8 ]
+        %tmp.17 = getm $.Toybox.WatchUi;
+        %tmp.18 = getv function %tmp.17 :loadResource;
+        %tmp.20 = getv ? :Rez;
+        %tmp.21 = getv %tmp.20 :Fonts;
+        %tmp.22 = getv %tmp.21 :t1;
+        %tmp.23 = invoke %tmp.17 %tmp.18(%tmp.22);
+        putv self :t1 %tmp.23;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 23 8 ]
+        %tmp.24 = getm $.Toybox.WatchUi;
+        %tmp.25 = getv function %tmp.24 :loadResource;
+        %tmp.27 = getv ? :Rez;
+        %tmp.28 = getv %tmp.27 :Fonts;
+        %tmp.29 = getv %tmp.28 :t2;
+        %tmp.30 = invoke %tmp.24 %tmp.25(%tmp.29);
+        putv self :t2 %tmp.30;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 24 8 ]
+        %tmp.31 = getm $.Toybox.WatchUi;
+        %tmp.32 = getv function %tmp.31 :loadResource;
+        %tmp.34 = getv ? :Rez;
+        %tmp.35 = getv %tmp.34 :Fonts;
+        %tmp.36 = getv %tmp.35 :f1;
+        %tmp.37 = invoke %tmp.31 %tmp.32(%tmp.36);
+        putv self :f1 %tmp.37;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 25 8 ]
+        %tmp.38 = getm $.Toybox.WatchUi;
+        %tmp.39 = getv function %tmp.38 :loadResource;
+        %tmp.41 = getv ? :Rez;
+        %tmp.42 = getv %tmp.41 :Fonts;
+        %tmp.43 = getv %tmp.42 :f2;
+        %tmp.44 = invoke %tmp.38 %tmp.39(%tmp.43);
+        putv self :f2 %tmp.44;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 27 8 ]
+        %tmp.45 = lgetv %dc;
+        %tmp.46 = getv function %tmp.45 :getWidth;
+        %tmp.47 = invoke %tmp.45 %tmp.46();
+        %tmp.48 = 2;
+        %tmp.49 = div %tmp.47 %tmp.48;
+        putv self :faceRadius %tmp.49;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 28 8 ]
+        %tmp.50 = lgetv %dc;
+        %tmp.51 = getv function %tmp.50 :getWidth;
+        %tmp.52 = invoke %tmp.50 %tmp.51();
+        putv self :viewWidth %tmp.52;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 29 8 ]
+        %tmp.53 = lgetv %dc;
+        %tmp.54 = getv function %tmp.53 :getHeight;
+        %tmp.55 = invoke %tmp.53 %tmp.54();
+        putv self :viewHeight %tmp.55;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 30 8 ]
+        %tmp.57 = getv ? :viewWidth;
+        %tmp.58 = 2;
+        %tmp.59 = div %tmp.57 %tmp.58;
+        putv self :viewXCenter %tmp.59;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 31 8 ]
+        %tmp.61 = getv ? :viewHeight;
+        %tmp.62 = 2;
+        %tmp.63 = div %tmp.61 %tmp.62;
+        putv self :viewYCenter %tmp.63;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_19_40_stop:
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 37; ]
+    function onShow() as Void {
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 41; ]
+    function onUpdate(dc as Dc) as Void {
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 43 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :onUpdate;
+        %tmp.5 = lgetv %dc;
+        invoke %tmp.2 %tmp.3(%tmp.5);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 46 8 ]
+        %tmp.6 = lgetv %dc;
+        %tmp.7 = getv function %tmp.6 :drawBitmap;
+        %tmp.8 = 0;
+        %tmp.9 = 0;
+        %tmp.11 = getv ? :bg;
+        invoke %tmp.6 %tmp.7(%tmp.8, %tmp.9, %tmp.11);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 49 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %clockTime.1 = local;
+        %tmp.12 = getm $.Toybox.System;
+        %tmp.13 = getv function %tmp.12 :getClockTime;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        lputv %clockTime.1 %tmp.14;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 50 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %hourString.2 = local;
+        %tmp.15 = getm $.Toybox.Lang;
+        %tmp.16 = getv function %tmp.15 :format;
+        %tmp.17 = "$1$";
+        %tmp.18 = newa 1;
+        %tmp.19 = lgetv %clockTime.1;
+        %tmp.20 = getv %tmp.19 :hour;
+        %tmp.21 = getv function %tmp.20 :format;
+        %tmp.22 = "%02d";
+        %tmp.23 = invoke %tmp.20 %tmp.21(%tmp.22);
+        %tmp.24 = dup %tmp.18;
+        %tmp.25 = aputv %tmp.24 0 %tmp.23;
+        %tmp.26 = invoke %tmp.15 %tmp.16(%tmp.17, %tmp.25);
+        lputv %hourString.2 %tmp.26;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 51 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %minuteString.3 = local;
+        %tmp.27 = getm $.Toybox.Lang;
+        %tmp.28 = getv function %tmp.27 :format;
+        %tmp.29 = "$1$";
+        %tmp.30 = newa 1;
+        %tmp.31 = lgetv %clockTime.1;
+        %tmp.32 = getv %tmp.31 :min;
+        %tmp.33 = getv function %tmp.32 :format;
+        %tmp.34 = "%02d";
+        %tmp.35 = invoke %tmp.32 %tmp.33(%tmp.34);
+        %tmp.36 = dup %tmp.30;
+        %tmp.37 = aputv %tmp.36 0 %tmp.35;
+        %tmp.38 = invoke %tmp.27 %tmp.28(%tmp.29, %tmp.37);
+        lputv %minuteString.3 %tmp.38;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 52 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %info.4 = local;
+        %tmp.40 = getv ? :ActivityMonitor;
+        %tmp.41 = getv function %tmp.40 :getInfo;
+        %tmp.42 = invoke %tmp.40 %tmp.41();
+        lputv %info.4 %tmp.42;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 55 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %steps.5 = local;
+        %tmp.43 = lgetv %info.4;
+        %tmp.44 = getv %tmp.43 :steps;
+        lputv %steps.5 %tmp.44;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 56 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %stepsGoal.6 = local;
+        %tmp.45 = lgetv %info.4;
+        %tmp.46 = getv %tmp.45 :stepGoal;
+        lputv %stepsGoal.6 %tmp.46;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 57 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %floorsClimbed.7 = local;
+        %tmp.47 = lgetv %info.4;
+        %tmp.48 = getv %tmp.47 :floorsClimbed;
+        lputv %floorsClimbed.7 %tmp.48;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 58 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %floorsClimbedGoal.8 = local;
+        %tmp.49 = lgetv %info.4;
+        %tmp.50 = getv %tmp.49 :floorsClimbedGoal;
+        lputv %floorsClimbedGoal.8 %tmp.50;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 61 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %dateString.9 = local;
+        %tmp.51 = getm $.Toybox.Lang;
+        %tmp.52 = getv function %tmp.51 :format;
+        %tmp.53 = "$1$";
+        %tmp.54 = newa 1;
+        %tmp.55 = getm $.Toybox.Time.Gregorian;
+        %tmp.56 = getv function %tmp.55 :info;
+        %tmp.58 = getv ? :Time;
+        %tmp.59 = getv function %tmp.58 :now;
+        %tmp.60 = invoke %tmp.58 %tmp.59();
+        %tmp.62 = getv ? :Time;
+        %tmp.63 = getv %tmp.62 :FORMAT_MEDIUM;
+        %tmp.64 = invoke %tmp.55 %tmp.56(%tmp.60, %tmp.63);
+        %tmp.65 = getv %tmp.64 :day;
+        %tmp.66 = getv function %tmp.65 :toString;
+        %tmp.67 = invoke %tmp.65 %tmp.66();
+        %tmp.68 = dup %tmp.54;
+        %tmp.69 = aputv %tmp.68 0 %tmp.67;
+        %tmp.70 = invoke %tmp.51 %tmp.52(%tmp.53, %tmp.69);
+        lputv %dateString.9 %tmp.70;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 64 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %angle.10 = local;
+        %tmp.71 = self;
+        %tmp.72 = getv function %tmp.71 :getAngleFromTime;
+        %tmp.73 = lgetv %clockTime.1;
+        %tmp.74 = getv %tmp.73 :sec;
+        %tmp.75 = invoke %tmp.71 %tmp.72(%tmp.74);
+        %tmp.76 = 90;
+        %tmp.77 = sub %tmp.75 %tmp.76;
+        lputv %angle.10 %tmp.77;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 65 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %x.11 = local;
+        %tmp.78 = self;
+        %tmp.79 = getv function %tmp.78 :getXFromAngle;
+        %tmp.81 = lgetv %angle.10;
+        %tmp.82 = 40;
+        %tmp.83 = invoke %tmp.78 %tmp.79(%tmp.81, %tmp.82);
+        lputv %x.11 %tmp.83;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 66 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %y.12 = local;
+        %tmp.84 = self;
+        %tmp.85 = getv function %tmp.84 :getYFromAngle;
+        %tmp.87 = lgetv %angle.10;
+        %tmp.88 = 40;
+        %tmp.89 = invoke %tmp.84 %tmp.85(%tmp.87, %tmp.88);
+        %tmp.90 = 152;
+        %tmp.91 = sub %tmp.89 %tmp.90;
+        lputv %y.12 %tmp.91;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 67 8 ]
+        %tmp.92 = lgetv %dc;
+        %tmp.93 = getv function %tmp.92 :setColor;
+        %tmp.94 = 0x1C2833;
+        %tmp.95 = 0x1C2833;
+        invoke %tmp.92 %tmp.93(%tmp.94, %tmp.95);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 68 8 ]
+        %tmp.96 = lgetv %dc;
+        %tmp.97 = getv function %tmp.96 :fillCircle;
+        %tmp.99 = lgetv %x.11;
+        %tmp.101 = lgetv %y.12;
+        %tmp.102 = 9;
+        invoke %tmp.96 %tmp.97(%tmp.99, %tmp.101, %tmp.102);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 71 8 ]
+        %tmp.103 = self;
+        %tmp.104 = getv function %tmp.103 :getXFromAngle;
+        %tmp.106 = lgetv %angle.10;
+        %tmp.107 = 180;
+        %tmp.108 = sub %tmp.106 %tmp.107;
+        %tmp.109 = 40;
+        %tmp.110 = invoke %tmp.103 %tmp.104(%tmp.108, %tmp.109);
+        lputv %x.11 %tmp.110;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 72 8 ]
+        %tmp.111 = self;
+        %tmp.112 = getv function %tmp.111 :getYFromAngle;
+        %tmp.114 = lgetv %angle.10;
+        %tmp.115 = 180;
+        %tmp.116 = sub %tmp.114 %tmp.115;
+        %tmp.117 = 40;
+        %tmp.118 = invoke %tmp.111 %tmp.112(%tmp.116, %tmp.117);
+        %tmp.119 = 152;
+        %tmp.120 = add %tmp.118 %tmp.119;
+        lputv %y.12 %tmp.120;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 73 8 ]
+        %tmp.121 = lgetv %dc;
+        %tmp.122 = getv function %tmp.121 :setColor;
+        %tmp.123 = 0xD27628;
+        %tmp.124 = 0xD27628;
+        invoke %tmp.121 %tmp.122(%tmp.123, %tmp.124);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 74 8 ]
+        %tmp.125 = lgetv %dc;
+        %tmp.126 = getv function %tmp.125 :fillCircle;
+        %tmp.128 = lgetv %x.11;
+        %tmp.130 = lgetv %y.12;
+        %tmp.131 = 9;
+        invoke %tmp.125 %tmp.126(%tmp.128, %tmp.130, %tmp.131);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 77 8 ]
+        %tmp.132 = lgetv %dc;
+        %tmp.133 = getv function %tmp.132 :setColor;
+        %tmp.134 = 0x1C2833;
+        %tmp.135 = getm $.Toybox.Graphics;
+        %tmp.136 = getv %tmp.135 :COLOR_TRANSPARENT;
+        invoke %tmp.132 %tmp.133(%tmp.134, %tmp.136);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 78 8 ]
+        %tmp.137 = lgetv %dc;
+        %tmp.138 = getv function %tmp.137 :drawText;
+        %tmp.140 = getv ? :viewXCenter;
+        %tmp.141 = 100;
+        %tmp.142 = sub %tmp.140 %tmp.141;
+        %tmp.144 = getv ? :viewYCenter;
+        %tmp.145 = 180;
+        %tmp.146 = sub %tmp.144 %tmp.145;
+        %tmp.148 = getv ? :t1;
+        %tmp.150 = lgetv %hourString.2;
+        %tmp.151 = getm $.Toybox.Graphics;
+        %tmp.152 = getv %tmp.151 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.137 %tmp.138(%tmp.142, %tmp.146, %tmp.148, %tmp.150, %tmp.152);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 79 8 ]
+        %tmp.153 = lgetv %dc;
+        %tmp.154 = getv function %tmp.153 :setColor;
+        %tmp.155 = 0xD27628;
+        %tmp.156 = getm $.Toybox.Graphics;
+        %tmp.157 = getv %tmp.156 :COLOR_TRANSPARENT;
+        invoke %tmp.153 %tmp.154(%tmp.155, %tmp.157);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 80 8 ]
+        %tmp.158 = lgetv %dc;
+        %tmp.159 = getv function %tmp.158 :drawText;
+        %tmp.161 = getv ? :viewXCenter;
+        %tmp.162 = 100;
+        %tmp.163 = add %tmp.161 %tmp.162;
+        %tmp.165 = getv ? :viewYCenter;
+        %tmp.166 = 60;
+        %tmp.167 = sub %tmp.165 %tmp.166;
+        %tmp.169 = getv ? :t1;
+        %tmp.171 = lgetv %minuteString.3;
+        %tmp.172 = getm $.Toybox.Graphics;
+        %tmp.173 = getv %tmp.172 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.158 %tmp.159(%tmp.163, %tmp.167, %tmp.169, %tmp.171, %tmp.173);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 83 8 ]
+        %tmp.174 = lgetv %dc;
+        %tmp.175 = getv function %tmp.174 :setColor;
+        %tmp.176 = 0xD27628;
+        %tmp.177 = getm $.Toybox.Graphics;
+        %tmp.178 = getv %tmp.177 :COLOR_TRANSPARENT;
+        invoke %tmp.174 %tmp.175(%tmp.176, %tmp.178);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 84 8 ]
+        %tmp.179 = lgetv %dc;
+        %tmp.180 = getv function %tmp.179 :drawText;
+        %tmp.182 = getv ? :viewXCenter;
+        %tmp.184 = getv ? :viewYCenter;
+        %tmp.185 = 165;
+        %tmp.186 = sub %tmp.184 %tmp.185;
+        %tmp.188 = getv ? :f2;
+        %tmp.190 = lgetv %dateString.9;
+        %tmp.191 = getm $.Toybox.Graphics;
+        %tmp.192 = getv %tmp.191 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.179 %tmp.180(%tmp.182, %tmp.186, %tmp.188, %tmp.190, %tmp.192);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 87 8 ]
+        %tmp.194 = getv ? :ActivityMonitor;
+        %tmp.195 = getv function %tmp.194 :getHeartRateHistory;
+        %tmp.196 = null;
+        %tmp.197 = true;
+        %tmp.198 = invoke %tmp.194 %tmp.195(%tmp.196, %tmp.197);
+        putv self :hrIterator %tmp.198;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 88 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop" ]
+        %hr.13 = local;
+        %tmp.200 = getv ? :Activity;
+        %tmp.201 = getv function %tmp.200 :getActivityInfo;
+        %tmp.202 = invoke %tmp.200 %tmp.201();
+        %tmp.203 = getv %tmp.202 :currentHeartRate;
+        lputv %hr.13 %tmp.203;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 89 8 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_89_8_if_stmt:
+        %tmp.204 = null;
+        %tmp.206 = lgetv %hr.13;
+        %tmp.207 = ne %tmp.204 %tmp.206;
+        bf %tmp.207 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_89_8_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_89_8_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_89_24_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 90 12 ]
+        %tmp.208 = lgetv %dc;
+        %tmp.209 = getv function %tmp.208 :setColor;
+        %tmp.210 = 0x1C2833;
+        %tmp.211 = getm $.Toybox.Graphics;
+        %tmp.212 = getv %tmp.211 :COLOR_TRANSPARENT;
+        invoke %tmp.208 %tmp.209(%tmp.210, %tmp.212);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 91 12 ]
+        %tmp.213 = lgetv %dc;
+        %tmp.214 = getv function %tmp.213 :drawText;
+        %tmp.216 = getv ? :viewXCenter;
+        %tmp.218 = getv ? :viewYCenter;
+        %tmp.219 = 139;
+        %tmp.220 = add %tmp.218 %tmp.219;
+        %tmp.222 = getv ? :f2;
+        %tmp.223 = lgetv %hr.13;
+        %tmp.224 = as %tmp.223 { (!Null) };
+        %tmp.225 = getv function %tmp.224 :toString;
+        %tmp.226 = invoke %tmp.224 %tmp.225();
+        %tmp.227 = getm $.Toybox.Graphics;
+        %tmp.228 = getv %tmp.227 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.213 %tmp.214(%tmp.216, %tmp.220, %tmp.222, %tmp.226, %tmp.228);
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_89_24_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_89_8_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_89_8_if_end:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 95 8 ]
+        %tmp.229 = lgetv %dc;
+        %tmp.230 = getv function %tmp.229 :setColor;
+        %tmp.231 = 0xffffff;
+        %tmp.232 = 0xffffff;
+        invoke %tmp.229 %tmp.230(%tmp.231, %tmp.232);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 97 8 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_97_8_if_stmt:
+        %tmp.234 = lgetv %stepsGoal.6;
+        %tmp.235 = null;
+        %tmp.236 = ne %tmp.234 %tmp.235;
+        bf %tmp.236 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_97_8_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_97_8_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_97_30_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 98 12 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_97_30_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_97_30_stop" ]
+        %stepsProgress.14 = local;
+        %tmp.238 = lgetv %steps.5;
+        %tmp.239 = 100;
+        %tmp.240 = mul %tmp.238 %tmp.239;
+        %tmp.242 = lgetv %stepsGoal.6;
+        %tmp.243 = as %tmp.242 { (!Null) };
+        %tmp.244 = div %tmp.240 %tmp.243;
+        lputv %stepsProgress.14 %tmp.244;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 99 12 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_99_12_if_stmt:
+        %tmp.246 = lgetv %stepsProgress.14;
+        %tmp.247 = 0;
+        %tmp.248 = ne %tmp.246 %tmp.247;
+        bf %tmp.248 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_99_12_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_99_12_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_99_35_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 100 16 ]
+        %tmp.249 = self;
+        %tmp.250 = getv function %tmp.249 :drawProgressCW;
+        %tmp.252 = lgetv %dc;
+        %tmp.254 = lgetv %stepsProgress.14;
+        %tmp.256 = getv ? :viewXCenter;
+        %tmp.257 = 142;
+        %tmp.258 = add %tmp.256 %tmp.257;
+        %tmp.260 = getv ? :viewYCenter;
+        %tmp.261 = 77;
+        %tmp.262 = sub %tmp.260 %tmp.261;
+        invoke %tmp.249 %tmp.250(%tmp.252, %tmp.254, %tmp.258, %tmp.262);
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_99_35_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_99_12_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_99_12_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_97_30_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_97_8_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_97_8_if_end:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 104 8 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_104_8_if_stmt:
+        %tmp.264 = lgetv %floorsClimbedGoal.8;
+        %tmp.265 = null;
+        %tmp.266 = ne %tmp.264 %tmp.265;
+        bf %tmp.266 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_104_8_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_104_8_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_104_38_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 105 12 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_104_38_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_104_38_stop" ]
+        %floorsProgress.15 = local;
+        %tmp.268 = lgetv %floorsClimbed.7;
+        %tmp.269 = 100;
+        %tmp.270 = mul %tmp.268 %tmp.269;
+        %tmp.272 = lgetv %floorsClimbedGoal.8;
+        %tmp.273 = as %tmp.272 { (!Null) };
+        %tmp.274 = div %tmp.270 %tmp.273;
+        lputv %floorsProgress.15 %tmp.274;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 106 12 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_106_12_if_stmt:
+        %tmp.276 = lgetv %floorsProgress.15;
+        %tmp.277 = 0;
+        %tmp.278 = ne %tmp.276 %tmp.277;
+        bf %tmp.278 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_106_12_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_106_12_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_106_36_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 107 16 ]
+        %tmp.279 = self;
+        %tmp.280 = getv function %tmp.279 :drawProgressCCW;
+        %tmp.282 = lgetv %dc;
+        %tmp.284 = lgetv %floorsProgress.15;
+        %tmp.286 = getv ? :viewXCenter;
+        %tmp.287 = 138;
+        %tmp.288 = sub %tmp.286 %tmp.287;
+        %tmp.290 = getv ? :viewYCenter;
+        %tmp.291 = 82;
+        %tmp.292 = add %tmp.290 %tmp.291;
+        invoke %tmp.279 %tmp.280(%tmp.282, %tmp.284, %tmp.288, %tmp.292);
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_106_36_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_106_12_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_106_12_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_104_38_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_104_8_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_104_8_if_end:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 112 8 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_8_if_stmt:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_11_begin:
+        %tmp.294 = getv ? :Weather;
+        %tmp.295 = getv function %tmp.294 :getCurrentConditions;
+        %tmp.296 = invoke %tmp.294 %tmp.295();
+        %tmp.297 = null;
+        %tmp.298 = ne %tmp.296 %tmp.297;
+        %tmp.299 = dup %tmp.298;
+        bf %tmp.299 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_53_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_53_true:
+        %tmp.301 = getv ? :Weather;
+        %tmp.302 = getv function %tmp.301 :getCurrentConditions;
+        %tmp.303 = invoke %tmp.301 %tmp.302();
+        %tmp.304 = getv %tmp.303 :feelsLikeTemperature;
+        %tmp.305 = null;
+        %tmp.306 = ne %tmp.304 %tmp.305;
+        %tmp.307 = and %tmp.298 %tmp.306;
+        push %tmp.307;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_53_end:
+        %tmp.308 = phi [%tmp.299 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_11_begin] [%tmp.307 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_53_true] [%tmp.308 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_53_end];
+        bf %tmp.308 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_8_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_8_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_114_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 113 12 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_114_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_114_stop" ]
+        %feelLikeTemperature.16 = local;
+        %tmp.309 = getm $.Toybox.Lang;
+        %tmp.310 = getv function %tmp.309 :format;
+        %tmp.311 = "$1$ DEG C";
+        %tmp.312 = newa 1;
+        %tmp.314 = getv ? :Weather;
+        %tmp.315 = getv function %tmp.314 :getCurrentConditions;
+        %tmp.316 = invoke %tmp.314 %tmp.315();
+        %tmp.317 = getv %tmp.316 :feelsLikeTemperature;
+        %tmp.318 = getv function %tmp.317 :toString;
+        %tmp.319 = invoke %tmp.317 %tmp.318();
+        %tmp.320 = dup %tmp.312;
+        %tmp.321 = aputv %tmp.320 0 %tmp.319;
+        %tmp.322 = invoke %tmp.309 %tmp.310(%tmp.311, %tmp.321);
+        lputv %feelLikeTemperature.16 %tmp.322;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 114 12 ]
+        %tmp.323 = lgetv %dc;
+        %tmp.324 = getv function %tmp.323 :setColor;
+        %tmp.325 = 0x1C2833;
+        %tmp.326 = getm $.Toybox.Graphics;
+        %tmp.327 = getv %tmp.326 :COLOR_TRANSPARENT;
+        invoke %tmp.323 %tmp.324(%tmp.325, %tmp.327);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 115 12 ]
+        %tmp.328 = lgetv %dc;
+        %tmp.329 = getv function %tmp.328 :drawText;
+        %tmp.331 = getv ? :viewXCenter;
+        %tmp.332 = 120;
+        %tmp.333 = sub %tmp.331 %tmp.332;
+        %tmp.335 = getv ? :viewYCenter;
+        %tmp.336 = 20;
+        %tmp.337 = sub %tmp.335 %tmp.336;
+        %tmp.339 = getv ? :f2;
+        %tmp.341 = lgetv %feelLikeTemperature.16;
+        %tmp.342 = getm $.Toybox.Graphics;
+        %tmp.343 = getv %tmp.342 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.328 %tmp.329(%tmp.333, %tmp.337, %tmp.339, %tmp.341, %tmp.343);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 116 12 ]
+        %tmp.344 = lgetv %dc;
+        %tmp.345 = getv function %tmp.344 :setColor;
+        %tmp.346 = 0xD27628;
+        %tmp.347 = getm $.Toybox.Graphics;
+        %tmp.348 = getv %tmp.347 :COLOR_TRANSPARENT;
+        invoke %tmp.344 %tmp.345(%tmp.346, %tmp.348);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 117 12 ]
+        %tmp.349 = lgetv %dc;
+        %tmp.350 = getv function %tmp.349 :drawText;
+        %tmp.352 = getv ? :viewXCenter;
+        %tmp.353 = 105;
+        %tmp.354 = add %tmp.352 %tmp.353;
+        %tmp.356 = getv ? :viewYCenter;
+        %tmp.357 = 20;
+        %tmp.358 = sub %tmp.356 %tmp.357;
+        %tmp.360 = getv ? :f2;
+        %tmp.361 = self;
+        %tmp.362 = getv function %tmp.361 :getFriendlyCondition;
+        %tmp.364 = getv ? :Weather;
+        %tmp.365 = getv function %tmp.364 :getCurrentConditions;
+        %tmp.366 = invoke %tmp.364 %tmp.365();
+        %tmp.367 = getv %tmp.366 :condition;
+        %tmp.368 = invoke %tmp.361 %tmp.362(%tmp.367);
+        %tmp.369 = getm $.Toybox.Graphics;
+        %tmp.370 = getv %tmp.369 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.349 %tmp.350(%tmp.354, %tmp.358, %tmp.360, %tmp.368, %tmp.370);
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_114_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_8_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_112_8_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_41_40_stop:
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 121; ]
+    function getFriendlyCondition(condition as Number) {
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_121_55_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 122 8 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_122_8_if_stmt:
+        %tmp.2 = lgetv %condition;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_122_8_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_122_8_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_122_28_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 123 12 ]
+        %tmp.5 = "CLEAR SKIES";
+        ret %tmp.5;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_122_28_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_122_8_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_122_8_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 125 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_125_13_if_stmt:
+        %tmp.7 = lgetv %condition;
+        %tmp.8 = 1;
+        %tmp.9 = eq %tmp.7 %tmp.8;
+        bf %tmp.9 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_125_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_125_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_125_33_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 126 12 ]
+        %tmp.10 = "KIND'A CLOUDY";
+        ret %tmp.10;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_125_33_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_125_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_125_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 128 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_128_13_if_stmt:
+        %tmp.12 = lgetv %condition;
+        %tmp.13 = 2;
+        %tmp.14 = eq %tmp.12 %tmp.13;
+        bf %tmp.14 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_128_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_128_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_128_33_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 129 12 ]
+        %tmp.15 = "CLOUDY";
+        ret %tmp.15;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_128_33_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_128_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_128_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 131 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_131_13_if_stmt:
+        %tmp.17 = lgetv %condition;
+        %tmp.18 = 3;
+        %tmp.19 = eq %tmp.17 %tmp.18;
+        bf %tmp.19 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_131_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_131_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_131_33_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 132 12 ]
+        %tmp.20 = "RAIN";
+        ret %tmp.20;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_131_33_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_131_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_131_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 134 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_134_13_if_stmt:
+        %tmp.22 = lgetv %condition;
+        %tmp.23 = 4;
+        %tmp.24 = eq %tmp.22 %tmp.23;
+        bf %tmp.24 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_134_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_134_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_134_33_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 135 12 ]
+        %tmp.25 = "SNOW";
+        ret %tmp.25;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_134_33_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_134_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_134_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 137 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_137_13_if_stmt:
+        %tmp.27 = lgetv %condition;
+        %tmp.28 = 5;
+        %tmp.29 = eq %tmp.27 %tmp.28;
+        bf %tmp.29 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_137_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_137_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_137_33_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 138 12 ]
+        %tmp.30 = "WINDY";
+        ret %tmp.30;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_137_33_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_137_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_137_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 140 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_140_13_if_stmt:
+        %tmp.32 = lgetv %condition;
+        %tmp.33 = 6;
+        %tmp.34 = eq %tmp.32 %tmp.33;
+        bf %tmp.34 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_140_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_140_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_140_33_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 141 12 ]
+        %tmp.35 = "THUNDERSTORMS";
+        ret %tmp.35;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_140_33_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_140_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_140_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 143 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_143_13_if_stmt:
+        %tmp.37 = lgetv %condition;
+        %tmp.38 = 7;
+        %tmp.39 = eq %tmp.37 %tmp.38;
+        bf %tmp.39 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_143_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_143_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_143_33_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 144 12 ]
+        %tmp.40 = "WINTRY";
+        ret %tmp.40;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_143_33_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_143_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_143_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 146 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_146_13_if_stmt:
+        %tmp.42 = lgetv %condition;
+        %tmp.43 = 8;
+        %tmp.44 = eq %tmp.42 %tmp.43;
+        bf %tmp.44 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_146_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_146_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_146_33_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 147 12 ]
+        %tmp.45 = "FOG";
+        ret %tmp.45;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_146_33_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_146_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_146_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 149 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_149_13_if_stmt:
+        %tmp.47 = lgetv %condition;
+        %tmp.48 = 9;
+        %tmp.49 = eq %tmp.47 %tmp.48;
+        bf %tmp.49 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_149_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_149_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_149_33_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 150 12 ]
+        %tmp.50 = "HAZY";
+        ret %tmp.50;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_149_33_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_149_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_149_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 152 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_152_13_if_stmt:
+        %tmp.52 = lgetv %condition;
+        %tmp.53 = 10;
+        %tmp.54 = eq %tmp.52 %tmp.53;
+        bf %tmp.54 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_152_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_152_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_152_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 153 12 ]
+        %tmp.55 = "HAIL";
+        ret %tmp.55;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_152_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_152_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_152_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 155 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_155_13_if_stmt:
+        %tmp.57 = lgetv %condition;
+        %tmp.58 = 11;
+        %tmp.59 = eq %tmp.57 %tmp.58;
+        bf %tmp.59 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_155_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_155_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_155_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 156 12 ]
+        %tmp.60 = "SHOWERS";
+        ret %tmp.60;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_155_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_155_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_155_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 158 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_158_13_if_stmt:
+        %tmp.62 = lgetv %condition;
+        %tmp.63 = 12;
+        %tmp.64 = eq %tmp.62 %tmp.63;
+        bf %tmp.64 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_158_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_158_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_158_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 159 12 ]
+        %tmp.65 = "THUNDERSTORMS";
+        ret %tmp.65;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_158_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_158_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_158_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 161 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_161_13_if_stmt:
+        %tmp.67 = lgetv %condition;
+        %tmp.68 = 13;
+        %tmp.69 = eq %tmp.67 %tmp.68;
+        bf %tmp.69 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_161_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_161_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_161_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 162 12 ]
+        %tmp.70 = "RAIN";
+        ret %tmp.70;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_161_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_161_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_161_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 164 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_164_13_if_stmt:
+        %tmp.72 = lgetv %condition;
+        %tmp.73 = 14;
+        %tmp.74 = eq %tmp.72 %tmp.73;
+        bf %tmp.74 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_164_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_164_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_164_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 165 12 ]
+        %tmp.75 = "KIND'A CLOUDY";
+        ret %tmp.75;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_164_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_164_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_164_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 167 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_167_13_if_stmt:
+        %tmp.77 = lgetv %condition;
+        %tmp.78 = 15;
+        %tmp.79 = eq %tmp.77 %tmp.78;
+        bf %tmp.79 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_167_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_167_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_167_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 168 12 ]
+        %tmp.80 = "LIGHT RAIN";
+        ret %tmp.80;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_167_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_167_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_167_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 170 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_170_13_if_stmt:
+        %tmp.82 = lgetv %condition;
+        %tmp.83 = 16;
+        %tmp.84 = eq %tmp.82 %tmp.83;
+        bf %tmp.84 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_170_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_170_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_170_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 171 12 ]
+        %tmp.85 = "LIGHT SNOW";
+        ret %tmp.85;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_170_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_170_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_170_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 173 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_173_13_if_stmt:
+        %tmp.87 = lgetv %condition;
+        %tmp.88 = 17;
+        %tmp.89 = eq %tmp.87 %tmp.88;
+        bf %tmp.89 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_173_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_173_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_173_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 174 12 ]
+        %tmp.90 = "SNOW!!";
+        ret %tmp.90;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_173_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_173_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_173_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 176 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_176_13_if_stmt:
+        %tmp.92 = lgetv %condition;
+        %tmp.93 = 18;
+        %tmp.94 = eq %tmp.92 %tmp.93;
+        bf %tmp.94 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_176_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_176_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_176_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 177 12 ]
+        %tmp.95 = "LIGHT SNOW";
+        ret %tmp.95;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_176_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_176_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_176_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 179 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_179_13_if_stmt:
+        %tmp.97 = lgetv %condition;
+        %tmp.98 = 19;
+        %tmp.99 = eq %tmp.97 %tmp.98;
+        bf %tmp.99 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_179_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_179_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_179_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 180 12 ]
+        %tmp.100 = "RAIN!!";
+        ret %tmp.100;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_179_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_179_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_179_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 182 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_182_13_if_stmt:
+        %tmp.102 = lgetv %condition;
+        %tmp.103 = 20;
+        %tmp.104 = eq %tmp.102 %tmp.103;
+        bf %tmp.104 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_182_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_182_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_182_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 183 12 ]
+        %tmp.105 = "CLOUDY";
+        ret %tmp.105;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_182_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_182_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_182_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 185 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_185_13_if_stmt:
+        %tmp.107 = lgetv %condition;
+        %tmp.108 = 21;
+        %tmp.109 = eq %tmp.107 %tmp.108;
+        bf %tmp.109 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_185_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_185_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_185_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 186 12 ]
+        %tmp.110 = "SNOW";
+        ret %tmp.110;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_185_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_185_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_185_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 188 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_188_13_if_stmt:
+        %tmp.112 = lgetv %condition;
+        %tmp.113 = 22;
+        %tmp.114 = eq %tmp.112 %tmp.113;
+        bf %tmp.114 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_188_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_188_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_188_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 189 12 ]
+        %tmp.115 = "KIND'A CLEAR";
+        ret %tmp.115;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_188_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_188_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_188_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 191 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_191_13_if_stmt:
+        %tmp.117 = lgetv %condition;
+        %tmp.118 = 23;
+        %tmp.119 = eq %tmp.117 %tmp.118;
+        bf %tmp.119 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_191_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_191_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_191_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 192 12 ]
+        %tmp.120 = "CLEAR";
+        ret %tmp.120;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_191_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_191_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_191_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 194 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_194_13_if_stmt:
+        %tmp.122 = lgetv %condition;
+        %tmp.123 = 24;
+        %tmp.124 = eq %tmp.122 %tmp.123;
+        bf %tmp.124 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_194_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_194_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_194_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 195 12 ]
+        %tmp.125 = "LIGHT SHOWERS";
+        ret %tmp.125;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_194_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_194_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_194_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 197 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_197_13_if_stmt:
+        %tmp.127 = lgetv %condition;
+        %tmp.128 = 25;
+        %tmp.129 = eq %tmp.127 %tmp.128;
+        bf %tmp.129 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_197_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_197_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_197_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 198 12 ]
+        %tmp.130 = "SHOWERS";
+        ret %tmp.130;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_197_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_197_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_197_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 200 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_200_13_if_stmt:
+        %tmp.132 = lgetv %condition;
+        %tmp.133 = 26;
+        %tmp.134 = eq %tmp.132 %tmp.133;
+        bf %tmp.134 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_200_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_200_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_200_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 201 12 ]
+        %tmp.135 = "SHOWERS!!";
+        ret %tmp.135;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_200_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_200_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_200_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 203 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_203_13_if_stmt:
+        %tmp.137 = lgetv %condition;
+        %tmp.138 = 27;
+        %tmp.139 = eq %tmp.137 %tmp.138;
+        bf %tmp.139 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_203_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_203_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_203_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 204 12 ]
+        %tmp.140 = "SHOWERS?";
+        ret %tmp.140;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_203_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_203_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_203_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 206 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_206_13_if_stmt:
+        %tmp.142 = lgetv %condition;
+        %tmp.143 = 28;
+        %tmp.144 = eq %tmp.142 %tmp.143;
+        bf %tmp.144 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_206_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_206_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_206_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 207 12 ]
+        %tmp.145 = "THUNDERSTORM";
+        ret %tmp.145;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_206_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_206_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_206_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 209 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_209_13_if_stmt:
+        %tmp.147 = lgetv %condition;
+        %tmp.148 = 29;
+        %tmp.149 = eq %tmp.147 %tmp.148;
+        bf %tmp.149 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_209_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_209_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_209_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 210 12 ]
+        %tmp.150 = "MIST";
+        ret %tmp.150;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_209_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_209_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_209_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 212 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_212_13_if_stmt:
+        %tmp.152 = lgetv %condition;
+        %tmp.153 = 30;
+        %tmp.154 = eq %tmp.152 %tmp.153;
+        bf %tmp.154 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_212_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_212_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_212_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 213 12 ]
+        %tmp.155 = "DUST";
+        ret %tmp.155;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_212_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_212_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_212_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 215 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_215_13_if_stmt:
+        %tmp.157 = lgetv %condition;
+        %tmp.158 = 31;
+        %tmp.159 = eq %tmp.157 %tmp.158;
+        bf %tmp.159 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_215_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_215_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_215_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 216 12 ]
+        %tmp.160 = "DRIZZLE";
+        ret %tmp.160;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_215_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_215_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_215_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 218 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_218_13_if_stmt:
+        %tmp.162 = lgetv %condition;
+        %tmp.163 = 32;
+        %tmp.164 = eq %tmp.162 %tmp.163;
+        bf %tmp.164 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_218_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_218_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_218_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 219 12 ]
+        %tmp.165 = "TORNADO";
+        ret %tmp.165;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_218_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_218_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_218_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 221 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_221_13_if_stmt:
+        %tmp.167 = lgetv %condition;
+        %tmp.168 = 33;
+        %tmp.169 = eq %tmp.167 %tmp.168;
+        bf %tmp.169 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_221_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_221_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_221_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 222 12 ]
+        %tmp.170 = "SMOKE";
+        ret %tmp.170;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_221_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_221_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_221_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 224 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_224_13_if_stmt:
+        %tmp.172 = lgetv %condition;
+        %tmp.173 = 34;
+        %tmp.174 = eq %tmp.172 %tmp.173;
+        bf %tmp.174 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_224_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_224_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_224_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 225 12 ]
+        %tmp.175 = "ICE";
+        ret %tmp.175;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_224_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_224_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_224_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 227 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_227_13_if_stmt:
+        %tmp.177 = lgetv %condition;
+        %tmp.178 = 35;
+        %tmp.179 = eq %tmp.177 %tmp.178;
+        bf %tmp.179 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_227_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_227_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_227_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 228 12 ]
+        %tmp.180 = "SAND";
+        ret %tmp.180;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_227_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_227_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_227_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 230 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_230_13_if_stmt:
+        %tmp.182 = lgetv %condition;
+        %tmp.183 = 36;
+        %tmp.184 = eq %tmp.182 %tmp.183;
+        bf %tmp.184 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_230_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_230_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_230_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 231 12 ]
+        %tmp.185 = "GUSTY";
+        ret %tmp.185;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_230_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_230_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_230_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 233 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_233_13_if_stmt:
+        %tmp.187 = lgetv %condition;
+        %tmp.188 = 37;
+        %tmp.189 = eq %tmp.187 %tmp.188;
+        bf %tmp.189 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_233_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_233_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_233_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 234 12 ]
+        %tmp.190 = "SAND STORM";
+        ret %tmp.190;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_233_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_233_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_233_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 236 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_236_13_if_stmt:
+        %tmp.192 = lgetv %condition;
+        %tmp.193 = 38;
+        %tmp.194 = eq %tmp.192 %tmp.193;
+        bf %tmp.194 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_236_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_236_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_236_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 237 12 ]
+        %tmp.195 = "VOLCANIC ASH";
+        ret %tmp.195;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_236_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_236_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_236_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 239 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_239_13_if_stmt:
+        %tmp.197 = lgetv %condition;
+        %tmp.198 = 39;
+        %tmp.199 = eq %tmp.197 %tmp.198;
+        bf %tmp.199 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_239_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_239_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_239_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 240 12 ]
+        %tmp.200 = "HAZE";
+        ret %tmp.200;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_239_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_239_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_239_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 242 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_242_13_if_stmt:
+        %tmp.202 = lgetv %condition;
+        %tmp.203 = 40;
+        %tmp.204 = eq %tmp.202 %tmp.203;
+        bf %tmp.204 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_242_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_242_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_242_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 243 12 ]
+        %tmp.205 = "FAIR";
+        ret %tmp.205;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_242_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_242_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_242_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 245 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_245_13_if_stmt:
+        %tmp.207 = lgetv %condition;
+        %tmp.208 = 41;
+        %tmp.209 = eq %tmp.207 %tmp.208;
+        bf %tmp.209 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_245_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_245_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_245_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 246 12 ]
+        %tmp.210 = "HURRICANE";
+        ret %tmp.210;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_245_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_245_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_245_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 248 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_248_13_if_stmt:
+        %tmp.212 = lgetv %condition;
+        %tmp.213 = 42;
+        %tmp.214 = eq %tmp.212 %tmp.213;
+        bf %tmp.214 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_248_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_248_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_248_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 249 12 ]
+        %tmp.215 = "TROPICAL STORM";
+        ret %tmp.215;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_248_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_248_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_248_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 251 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_251_13_if_stmt:
+        %tmp.217 = lgetv %condition;
+        %tmp.218 = 43;
+        %tmp.219 = eq %tmp.217 %tmp.218;
+        bf %tmp.219 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_251_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_251_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_251_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 252 12 ]
+        %tmp.220 = "SNOW?";
+        ret %tmp.220;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_251_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_251_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_251_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 254 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_254_13_if_stmt:
+        %tmp.222 = lgetv %condition;
+        %tmp.223 = 44;
+        %tmp.224 = eq %tmp.222 %tmp.223;
+        bf %tmp.224 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_254_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_254_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_254_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 255 12 ]
+        %tmp.225 = "RAIN?";
+        ret %tmp.225;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_254_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_254_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_254_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 257 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_257_13_if_stmt:
+        %tmp.227 = lgetv %condition;
+        %tmp.228 = 45;
+        %tmp.229 = eq %tmp.227 %tmp.228;
+        bf %tmp.229 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_257_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_257_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_257_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 258 12 ]
+        %tmp.230 = "RAIN?";
+        ret %tmp.230;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_257_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_257_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_257_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 260 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_260_13_if_stmt:
+        %tmp.232 = lgetv %condition;
+        %tmp.233 = 46;
+        %tmp.234 = eq %tmp.232 %tmp.233;
+        bf %tmp.234 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_260_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_260_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_260_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 261 12 ]
+        %tmp.235 = "SNOW?";
+        ret %tmp.235;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_260_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_260_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_260_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 263 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_263_13_if_stmt:
+        %tmp.237 = lgetv %condition;
+        %tmp.238 = 47;
+        %tmp.239 = eq %tmp.237 %tmp.238;
+        bf %tmp.239 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_263_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_263_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_263_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 264 12 ]
+        %tmp.240 = "SNOW?";
+        ret %tmp.240;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_263_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_263_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_263_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 266 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_266_13_if_stmt:
+        %tmp.242 = lgetv %condition;
+        %tmp.243 = 48;
+        %tmp.244 = eq %tmp.242 %tmp.243;
+        bf %tmp.244 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_266_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_266_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_266_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 267 12 ]
+        %tmp.245 = "FLURRIES";
+        ret %tmp.245;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_266_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_266_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_266_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 269 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_269_13_if_stmt:
+        %tmp.247 = lgetv %condition;
+        %tmp.248 = 49;
+        %tmp.249 = eq %tmp.247 %tmp.248;
+        bf %tmp.249 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_269_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_269_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_269_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 270 12 ]
+        %tmp.250 = "FREEZING RAIN";
+        ret %tmp.250;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_269_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_269_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_269_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 272 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_272_13_if_stmt:
+        %tmp.252 = lgetv %condition;
+        %tmp.253 = 50;
+        %tmp.254 = eq %tmp.252 %tmp.253;
+        bf %tmp.254 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_272_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_272_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_272_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 273 12 ]
+        %tmp.255 = "SLEET";
+        ret %tmp.255;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_272_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_272_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_272_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 275 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_275_13_if_stmt:
+        %tmp.257 = lgetv %condition;
+        %tmp.258 = 51;
+        %tmp.259 = eq %tmp.257 %tmp.258;
+        bf %tmp.259 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_275_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_275_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_275_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 276 12 ]
+        %tmp.260 = "ICE SNOW";
+        ret %tmp.260;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_275_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_275_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_275_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 278 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_278_13_if_stmt:
+        %tmp.262 = lgetv %condition;
+        %tmp.263 = 52;
+        %tmp.264 = eq %tmp.262 %tmp.263;
+        bf %tmp.264 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_278_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_278_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_278_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 279 12 ]
+        %tmp.265 = "THIN CLOUDS";
+        ret %tmp.265;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_278_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_278_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_278_13_if_false:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 281 13 ]
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_281_13_if_stmt:
+        %tmp.267 = lgetv %condition;
+        %tmp.268 = 53;
+        %tmp.269 = eq %tmp.267 %tmp.268;
+        bf %tmp.269 @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_281_13_if_false;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_281_13_if_true:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_281_34_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 282 12 ]
+        %tmp.270 = "UNKNOWN";
+        ret %tmp.270;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_281_34_stop:
+        goto @C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_281_13_if_end;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_281_13_if_false:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_284_13_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 285 12 ]
+        %tmp.271 = "UNKNOWN";
+        ret %tmp.271;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_284_13_stop:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_281_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_278_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_275_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_272_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_269_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_266_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_263_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_260_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_257_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_254_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_251_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_248_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_245_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_242_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_239_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_236_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_233_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_230_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_227_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_224_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_221_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_218_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_215_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_212_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_209_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_206_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_203_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_200_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_197_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_194_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_191_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_188_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_185_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_182_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_179_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_176_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_173_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_170_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_167_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_164_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_161_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_158_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_155_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_152_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_149_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_146_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_143_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_140_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_137_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_134_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_131_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_128_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_125_13_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_122_8_if_end:
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_121_55_stop:
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 290; ]
+    function drawProgressCW(dc as Dc, percentage as Number, x as Number, y as Number) {
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_290_86_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 291 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_290_86_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_290_86_stop" ]
+        %endAngle.1 = local;
+        %tmp.2 = lgetv %percentage;
+        %tmp.3 = 360;
+        %tmp.4 = mul %tmp.2 %tmp.3;
+        %tmp.5 = 100;
+        %tmp.6 = div %tmp.4 %tmp.5;
+        lputv %endAngle.1 %tmp.6;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 292 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_290_86_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_290_86_stop" ]
+        %actualEndAngle.2 = local;
+        %tmp.7 = 360;
+        %tmp.9 = lgetv %endAngle.1;
+        %tmp.10 = 90;
+        %tmp.11 = sub %tmp.9 %tmp.10;
+        %tmp.12 = sub %tmp.7 %tmp.11;
+        lputv %actualEndAngle.2 %tmp.12;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 293 8 ]
+        %tmp.13 = lgetv %dc;
+        %tmp.14 = getv function %tmp.13 :setPenWidth;
+        %tmp.15 = 4;
+        invoke %tmp.13 %tmp.14(%tmp.15);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 294 8 ]
+        %tmp.16 = lgetv %dc;
+        %tmp.17 = getv function %tmp.16 :drawArc;
+        %tmp.19 = lgetv %x;
+        %tmp.21 = lgetv %y;
+        %tmp.22 = 25;
+        %tmp.23 = getm $.Toybox.Graphics;
+        %tmp.24 = getv %tmp.23 :ARC_CLOCKWISE;
+        %tmp.25 = 90;
+        %tmp.27 = lgetv %actualEndAngle.2;
+        invoke %tmp.16 %tmp.17(%tmp.19, %tmp.21, %tmp.22, %tmp.24, %tmp.25, %tmp.27);
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_290_86_stop:
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 298; ]
+    function drawProgressCCW(dc as Dc, percentage as Number, x as Number, y as Number) {
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_298_87_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 299 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_298_87_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_298_87_stop" ]
+        %endAngle.1 = local;
+        %tmp.2 = lgetv %percentage;
+        %tmp.3 = 360;
+        %tmp.4 = mul %tmp.2 %tmp.3;
+        %tmp.5 = 100;
+        %tmp.6 = div %tmp.4 %tmp.5;
+        lputv %endAngle.1 %tmp.6;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 300 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_298_87_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_298_87_stop" ]
+        %actualEndAngle.2 = local;
+        %tmp.7 = 360;
+        %tmp.8 = 270;
+        %tmp.10 = lgetv %endAngle.1;
+        %tmp.11 = sub %tmp.8 %tmp.10;
+        %tmp.12 = sub %tmp.7 %tmp.11;
+        lputv %actualEndAngle.2 %tmp.12;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 301 8 ]
+        %tmp.13 = lgetv %dc;
+        %tmp.14 = getv function %tmp.13 :setPenWidth;
+        %tmp.15 = 4;
+        invoke %tmp.13 %tmp.14(%tmp.15);
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 302 8 ]
+        %tmp.16 = lgetv %dc;
+        %tmp.17 = getv function %tmp.16 :drawArc;
+        %tmp.19 = lgetv %x;
+        %tmp.21 = lgetv %y;
+        %tmp.22 = 25;
+        %tmp.23 = getm $.Toybox.Graphics;
+        %tmp.24 = getv %tmp.23 :ARC_COUNTER_CLOCKWISE;
+        %tmp.25 = 90;
+        %tmp.27 = lgetv %actualEndAngle.2;
+        invoke %tmp.16 %tmp.17(%tmp.19, %tmp.21, %tmp.22, %tmp.24, %tmp.25, %tmp.27);
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_298_87_stop:
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 306; ]
+    function getAngleFromTime(val as Number) {
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_306_45_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 307 8 ]
+        %tmp.2 = lgetv %val;
+        %tmp.3 = 360;
+        %tmp.4 = mul %tmp.2 %tmp.3;
+        %tmp.5 = 60;
+        %tmp.6 = div %tmp.4 %tmp.5;
+        ret %tmp.6;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_306_45_stop:
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 311; ]
+    function getXFromAngle(angle as Number, raidus as Number) {
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_311_62_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 312 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_311_62_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_311_62_stop" ]
+        %x.1 = local;
+        %tmp.2 = lgetv %raidus;
+        %tmp.4 = getv ? :Math;
+        %tmp.5 = getv function %tmp.4 :cos;
+        %tmp.7 = lgetv %angle;
+        %tmp.9 = getv ? :Math;
+        %tmp.10 = getv %tmp.9 :PI;
+        %tmp.11 = 180;
+        %tmp.12 = div %tmp.10 %tmp.11;
+        %tmp.13 = mul %tmp.7 %tmp.12;
+        %tmp.14 = invoke %tmp.4 %tmp.5(%tmp.13);
+        %tmp.15 = mul %tmp.2 %tmp.14;
+        %tmp.16 = 209;
+        %tmp.17 = add %tmp.15 %tmp.16;
+        lputv %x.1 %tmp.17;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 313 8 ]
+        %tmp.19 = lgetv %x.1;
+        ret %tmp.19;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_311_62_stop:
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 317; ]
+    function getYFromAngle(angle as Number, raidus as Number) {
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_317_62_start:
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 318 8 ]
+        [ "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_317_62_start" "C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_317_62_stop" ]
+        %y.1 = local;
+        %tmp.2 = lgetv %raidus;
+        %tmp.4 = getv ? :Math;
+        %tmp.5 = getv function %tmp.4 :sin;
+        %tmp.7 = lgetv %angle;
+        %tmp.9 = getv ? :Math;
+        %tmp.10 = getv %tmp.9 :PI;
+        %tmp.11 = 180;
+        %tmp.12 = div %tmp.10 %tmp.11;
+        %tmp.13 = mul %tmp.7 %tmp.12;
+        %tmp.14 = invoke %tmp.4 %tmp.5(%tmp.13);
+        %tmp.15 = mul %tmp.2 %tmp.14;
+        %tmp.16 = 209;
+        %tmp.17 = add %tmp.15 %tmp.16;
+        lputv %y.1 %tmp.17;
+[ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc" 319 8 ]
+        %tmp.19 = lgetv %y.1;
+        ret %tmp.19;
+C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceView_mc_317_62_stop:
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 325; ]
+    function onHide() as Void {
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 329; ]
+    function onExitSleep() as Void {
+    }
+    [ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 333; ]
+    function onEnterSleep() as Void {
+    }
+}
+[ @file = "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceView.mc"; @line = 1; ]
+<init> {
+}

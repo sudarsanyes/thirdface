@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+<manifest filename="C:\SudarsanSRINIVASAN\dev\thirdface\manifest.xml"/>
+<pcToLineNum>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceApp.mc" id="1" lineNum="26" parent="globals" pc="268435457" symbol="getApp"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceApp.mc" id="1" lineNum="27" parent="globals" pc="268435467" symbol="getApp"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceApp.mc" id="2" lineNum="5" parent="globals/thirdfaceApp" pc="268435483" symbol="&lt;init&gt;"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceApp.mc" id="4" lineNum="20" parent="globals/thirdfaceApp" pc="268435502" symbol="getInitialView"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceApp.mc" id="4" lineNum="21" parent="globals/thirdfaceApp" pc="268435504" symbol="getInitialView"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceApp.mc" id="5" lineNum="7" parent="globals/thirdfaceApp" pc="268435545" symbol="initialize"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceApp.mc" id="5" lineNum="8" parent="globals/thirdfaceApp" pc="268435547" symbol="initialize"/>
+<entry filename="c:\\SudarsanSRINIVASAN\\dev\\thirdface\\side_load\\gen\\006-B3851-00\\source\\Rez.mcgen" id="7" lineNum="7" parent="globals/Rez" pc="268435566" symbol="&lt;init&gt;"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="8" lineNum="7" parent="globals/thirdfaceView" pc="268435590" symbol="&lt;init&gt;"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="10" lineNum="311" parent="globals/thirdfaceView" pc="268435609" symbol="getXFromAngle"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="10" lineNum="312" parent="globals/thirdfaceView" pc="268435613" symbol="getXFromAngle"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="10" lineNum="313" parent="globals/thirdfaceView" pc="268435649" symbol="getXFromAngle"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="19" parent="globals/thirdfaceView" pc="268435652" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="20" parent="globals/thirdfaceView" pc="268435654" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="21" parent="globals/thirdfaceView" pc="268435695" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="22" parent="globals/thirdfaceView" pc="268435742" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="23" parent="globals/thirdfaceView" pc="268435789" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="24" parent="globals/thirdfaceView" pc="268435836" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="25" parent="globals/thirdfaceView" pc="268435883" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="27" parent="globals/thirdfaceView" pc="268435930" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="28" parent="globals/thirdfaceView" pc="268435955" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="29" parent="globals/thirdfaceView" pc="268435974" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="30" parent="globals/thirdfaceView" pc="268435993" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="12" lineNum="31" parent="globals/thirdfaceView" pc="268436015" symbol="onLayout"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="13" lineNum="317" parent="globals/thirdfaceView" pc="268436038" symbol="getYFromAngle"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="13" lineNum="318" parent="globals/thirdfaceView" pc="268436042" symbol="getYFromAngle"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="13" lineNum="319" parent="globals/thirdfaceView" pc="268436078" symbol="getYFromAngle"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="14" lineNum="298" parent="globals/thirdfaceView" pc="268436081" symbol="drawProgressCCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="14" lineNum="299" parent="globals/thirdfaceView" pc="268436085" symbol="drawProgressCCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="14" lineNum="300" parent="globals/thirdfaceView" pc="268436101" symbol="drawProgressCCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="14" lineNum="301" parent="globals/thirdfaceView" pc="268436117" symbol="drawProgressCCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="14" lineNum="302" parent="globals/thirdfaceView" pc="268436134" symbol="drawProgressCCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="121" parent="globals/thirdfaceView" pc="268436168" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="122" parent="globals/thirdfaceView" pc="268436170" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="123" parent="globals/thirdfaceView" pc="268436181" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="125" parent="globals/thirdfaceView" pc="268436190" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="126" parent="globals/thirdfaceView" pc="268436201" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="128" parent="globals/thirdfaceView" pc="268436210" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="129" parent="globals/thirdfaceView" pc="268436221" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="131" parent="globals/thirdfaceView" pc="268436230" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="132" parent="globals/thirdfaceView" pc="268436241" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="134" parent="globals/thirdfaceView" pc="268436250" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="135" parent="globals/thirdfaceView" pc="268436261" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="137" parent="globals/thirdfaceView" pc="268436270" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="138" parent="globals/thirdfaceView" pc="268436281" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="140" parent="globals/thirdfaceView" pc="268436290" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="141" parent="globals/thirdfaceView" pc="268436301" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="143" parent="globals/thirdfaceView" pc="268436310" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="144" parent="globals/thirdfaceView" pc="268436321" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="146" parent="globals/thirdfaceView" pc="268436330" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="147" parent="globals/thirdfaceView" pc="268436341" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="149" parent="globals/thirdfaceView" pc="268436350" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="150" parent="globals/thirdfaceView" pc="268436361" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="152" parent="globals/thirdfaceView" pc="268436370" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="153" parent="globals/thirdfaceView" pc="268436381" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="155" parent="globals/thirdfaceView" pc="268436390" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="156" parent="globals/thirdfaceView" pc="268436401" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="158" parent="globals/thirdfaceView" pc="268436410" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="159" parent="globals/thirdfaceView" pc="268436421" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="161" parent="globals/thirdfaceView" pc="268436430" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="162" parent="globals/thirdfaceView" pc="268436441" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="164" parent="globals/thirdfaceView" pc="268436450" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="165" parent="globals/thirdfaceView" pc="268436461" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="167" parent="globals/thirdfaceView" pc="268436470" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="168" parent="globals/thirdfaceView" pc="268436481" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="170" parent="globals/thirdfaceView" pc="268436490" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="171" parent="globals/thirdfaceView" pc="268436501" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="173" parent="globals/thirdfaceView" pc="268436510" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="174" parent="globals/thirdfaceView" pc="268436521" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="176" parent="globals/thirdfaceView" pc="268436530" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="177" parent="globals/thirdfaceView" pc="268436541" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="179" parent="globals/thirdfaceView" pc="268436550" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="180" parent="globals/thirdfaceView" pc="268436561" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="182" parent="globals/thirdfaceView" pc="268436570" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="183" parent="globals/thirdfaceView" pc="268436581" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="185" parent="globals/thirdfaceView" pc="268436590" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="186" parent="globals/thirdfaceView" pc="268436601" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="188" parent="globals/thirdfaceView" pc="268436610" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="189" parent="globals/thirdfaceView" pc="268436621" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="191" parent="globals/thirdfaceView" pc="268436630" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="192" parent="globals/thirdfaceView" pc="268436641" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="194" parent="globals/thirdfaceView" pc="268436650" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="195" parent="globals/thirdfaceView" pc="268436661" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="197" parent="globals/thirdfaceView" pc="268436670" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="198" parent="globals/thirdfaceView" pc="268436681" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="200" parent="globals/thirdfaceView" pc="268436690" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="201" parent="globals/thirdfaceView" pc="268436701" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="203" parent="globals/thirdfaceView" pc="268436710" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="204" parent="globals/thirdfaceView" pc="268436721" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="206" parent="globals/thirdfaceView" pc="268436730" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="207" parent="globals/thirdfaceView" pc="268436741" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="209" parent="globals/thirdfaceView" pc="268436750" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="210" parent="globals/thirdfaceView" pc="268436761" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="212" parent="globals/thirdfaceView" pc="268436770" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="213" parent="globals/thirdfaceView" pc="268436781" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="215" parent="globals/thirdfaceView" pc="268436790" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="216" parent="globals/thirdfaceView" pc="268436801" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="218" parent="globals/thirdfaceView" pc="268436810" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="219" parent="globals/thirdfaceView" pc="268436821" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="221" parent="globals/thirdfaceView" pc="268436830" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="222" parent="globals/thirdfaceView" pc="268436841" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="224" parent="globals/thirdfaceView" pc="268436850" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="225" parent="globals/thirdfaceView" pc="268436861" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="227" parent="globals/thirdfaceView" pc="268436870" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="228" parent="globals/thirdfaceView" pc="268436881" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="230" parent="globals/thirdfaceView" pc="268436890" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="231" parent="globals/thirdfaceView" pc="268436901" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="233" parent="globals/thirdfaceView" pc="268436910" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="234" parent="globals/thirdfaceView" pc="268436921" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="236" parent="globals/thirdfaceView" pc="268436930" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="237" parent="globals/thirdfaceView" pc="268436941" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="239" parent="globals/thirdfaceView" pc="268436950" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="240" parent="globals/thirdfaceView" pc="268436961" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="242" parent="globals/thirdfaceView" pc="268436970" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="243" parent="globals/thirdfaceView" pc="268436981" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="245" parent="globals/thirdfaceView" pc="268436990" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="246" parent="globals/thirdfaceView" pc="268437001" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="248" parent="globals/thirdfaceView" pc="268437010" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="249" parent="globals/thirdfaceView" pc="268437021" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="251" parent="globals/thirdfaceView" pc="268437030" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="252" parent="globals/thirdfaceView" pc="268437041" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="254" parent="globals/thirdfaceView" pc="268437050" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="255" parent="globals/thirdfaceView" pc="268437061" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="257" parent="globals/thirdfaceView" pc="268437070" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="258" parent="globals/thirdfaceView" pc="268437081" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="260" parent="globals/thirdfaceView" pc="268437090" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="261" parent="globals/thirdfaceView" pc="268437101" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="263" parent="globals/thirdfaceView" pc="268437110" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="264" parent="globals/thirdfaceView" pc="268437121" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="266" parent="globals/thirdfaceView" pc="268437130" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="267" parent="globals/thirdfaceView" pc="268437141" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="269" parent="globals/thirdfaceView" pc="268437150" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="270" parent="globals/thirdfaceView" pc="268437161" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="272" parent="globals/thirdfaceView" pc="268437170" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="273" parent="globals/thirdfaceView" pc="268437181" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="275" parent="globals/thirdfaceView" pc="268437190" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="276" parent="globals/thirdfaceView" pc="268437201" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="278" parent="globals/thirdfaceView" pc="268437210" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="279" parent="globals/thirdfaceView" pc="268437221" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="281" parent="globals/thirdfaceView" pc="268437230" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="282" parent="globals/thirdfaceView" pc="268437241" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="15" lineNum="285" parent="globals/thirdfaceView" pc="268437250" symbol="getFriendlyCondition"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="16" lineNum="306" parent="globals/thirdfaceView" pc="268437257" symbol="getAngleFromTime"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="16" lineNum="307" parent="globals/thirdfaceView" pc="268437259" symbol="getAngleFromTime"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="18" lineNum="14" parent="globals/thirdfaceView" pc="268437274" symbol="initialize"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="18" lineNum="15" parent="globals/thirdfaceView" pc="268437276" symbol="initialize"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="20" lineNum="290" parent="globals/thirdfaceView" pc="268437295" symbol="drawProgressCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="20" lineNum="291" parent="globals/thirdfaceView" pc="268437299" symbol="drawProgressCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="20" lineNum="292" parent="globals/thirdfaceView" pc="268437315" symbol="drawProgressCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="20" lineNum="293" parent="globals/thirdfaceView" pc="268437331" symbol="drawProgressCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="20" lineNum="294" parent="globals/thirdfaceView" pc="268437348" symbol="drawProgressCW"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="41" parent="globals/thirdfaceView" pc="268437382" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="43" parent="globals/thirdfaceView" pc="268437386" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="46" parent="globals/thirdfaceView" pc="268437410" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="49" parent="globals/thirdfaceView" pc="268437440" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="50" parent="globals/thirdfaceView" pc="268437457" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="51" parent="globals/thirdfaceView" pc="268437515" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="52" parent="globals/thirdfaceView" pc="268437573" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="55" parent="globals/thirdfaceView" pc="268437592" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="56" parent="globals/thirdfaceView" pc="268437602" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="57" parent="globals/thirdfaceView" pc="268437612" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="58" parent="globals/thirdfaceView" pc="268437622" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="61" parent="globals/thirdfaceView" pc="268437632" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="64" parent="globals/thirdfaceView" pc="268437720" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="65" parent="globals/thirdfaceView" pc="268437747" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="66" parent="globals/thirdfaceView" pc="268437767" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="67" parent="globals/thirdfaceView" pc="268437793" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="68" parent="globals/thirdfaceView" pc="268437815" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="71" parent="globals/thirdfaceView" pc="268437836" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="72" parent="globals/thirdfaceView" pc="268437862" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="73" parent="globals/thirdfaceView" pc="268437894" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="74" parent="globals/thirdfaceView" pc="268437916" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="77" parent="globals/thirdfaceView" pc="268437937" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="78" parent="globals/thirdfaceView" pc="268437959" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="79" parent="globals/thirdfaceView" pc="268438014" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="80" parent="globals/thirdfaceView" pc="268438036" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="83" parent="globals/thirdfaceView" pc="268438091" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="84" parent="globals/thirdfaceView" pc="268438113" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="87" parent="globals/thirdfaceView" pc="268438162" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="88" parent="globals/thirdfaceView" pc="268438190" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="89" parent="globals/thirdfaceView" pc="268438215" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="90" parent="globals/thirdfaceView" pc="268438222" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="91" parent="globals/thirdfaceView" pc="268438244" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="95" parent="globals/thirdfaceView" pc="268438302" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="97" parent="globals/thirdfaceView" pc="268438324" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="98" parent="globals/thirdfaceView" pc="268438331" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="99" parent="globals/thirdfaceView" pc="268438344" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="100" parent="globals/thirdfaceView" pc="268438355" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="104" parent="globals/thirdfaceView" pc="268438399" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="105" parent="globals/thirdfaceView" pc="268438406" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="106" parent="globals/thirdfaceView" pc="268438419" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="107" parent="globals/thirdfaceView" pc="268438430" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="112" parent="globals/thirdfaceView" pc="268438474" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="113" parent="globals/thirdfaceView" pc="268438527" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="114" parent="globals/thirdfaceView" pc="268438595" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="115" parent="globals/thirdfaceView" pc="268438617" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="116" parent="globals/thirdfaceView" pc="268438672" symbol="onUpdate"/>
+<entry filename="C:\\SudarsanSRINIVASAN\\dev\\thirdface\\source\\thirdfaceView.mc" id="21" lineNum="117" parent="globals/thirdfaceView" pc="268438694" symbol="onUpdate"/>
+<entry filename="c:\\SudarsanSRINIVASAN\\dev\\thirdface\\side_load\\gen\\006-B3851-00\\source\\Rez.mcgen" id="22" lineNum="24" parent="globals/Rez/Layouts" pc="268438782" symbol="WatchFace"/>
+<entry filename="c:\\SudarsanSRINIVASAN\\dev\\thirdface\\side_load\\gen\\006-B3851-00\\source\\Rez.mcgen" id="22" lineNum="25" parent="globals/Rez/Layouts" pc="268438792" symbol="WatchFace"/>
+</pcToLineNum>
+<symbolTable>
+<entry id="8388639" module="true" symbol="Graphics"/>
+<entry id="9" object="true" symbol="thirdfaceApp"/>
+<entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+<entry id="7" module="true" symbol="globals/Rez/Menus"/>
+<entry id="22" method="true" symbol="getYFromAngle"/>
+<entry id="8388924" module="true" symbol="Gregorian"/>
+<entry field="true" id="8388611" module="true" symbol="Toybox"/>
+<entry id="21" method="true" symbol="getXFromAngle"/>
+<entry field="true" id="26" symbol="viewHeight"/>
+<entry field="true" id="32" symbol="AppName"/>
+<entry id="8" module="true" symbol="globals/Rez/Strings"/>
+<entry id="8388772" module="true" object="true" symbol="Fonts"/>
+<entry id="15" method="true" symbol="drawProgressCW"/>
+<entry id="8388648" module="true" symbol="WatchUi"/>
+<entry field="true" id="28" symbol="viewXCenter"/>
+<entry id="2" module="true" symbol="globals/Rez"/>
+<entry field="true" id="29" symbol="viewYCenter"/>
+<entry id="8389124" method="true" symbol="onUpdate"/>
+<entry id="8389375" method="true" object="true" symbol="WatchFace"/>
+<entry id="8388771" module="true" object="true" symbol="Drawables"/>
+<entry field="true" id="25" symbol="t2"/>
+<entry field="true" id="24" symbol="t1"/>
+<entry id="12" module="true" symbol="Menus"/>
+<entry id="8389275" method="true" symbol="getApp"/>
+<entry field="true" id="18" symbol="faceRadius"/>
+<entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+<entry id="8389122" method="true" symbol="onLayout"/>
+<entry id="8389376" method="true" symbol="onEnterSleep"/>
+<entry field="true" id="17" symbol="f2"/>
+<entry field="true" id="16" symbol="f1"/>
+<entry field="true" id="13" symbol="bg"/>
+<entry field="true" id="23" symbol="hrIterator"/>
+<entry id="5" module="true" symbol="globals/Rez/JsonData"/>
+<entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+<entry id="20" method="true" symbol="getFriendlyCondition"/>
+<entry id="8389377" method="true" symbol="onExitSleep"/>
+<entry id="8388644" module="true" symbol="System"/>
+<entry id="8388769" module="true" object="true" symbol="Rez"/>
+<entry id="19" method="true" symbol="getAngleFromTime"/>
+<entry id="8388640" module="true" symbol="Lang"/>
+<entry id="8390088" module="true" object="true" symbol="JsonData"/>
+<entry field="true" id="30" symbol="LauncherIcon"/>
+<entry id="8388610" symbol="statics"/>
+<entry id="8389123" method="true" symbol="onShow"/>
+<entry field="true" id="31" symbol="bgImage"/>
+<entry id="8389350" module="true" symbol="globals"/>
+<entry id="8388770" module="true" object="true" symbol="Strings"/>
+<entry id="8388702" method="true" symbol="initialize"/>
+<entry id="8389279" method="true" symbol="onStart"/>
+<entry id="14" method="true" symbol="drawProgressCCW"/>
+<entry id="8389280" method="true" symbol="getInitialView"/>
+<entry id="8389281" method="true" symbol="onStop"/>
+<entry id="10" object="true" symbol="thirdfaceView"/>
+<entry field="true" id="27" symbol="viewWidth"/>
+<entry id="11" module="true" symbol="Layouts"/>
+<entry id="4" module="true" symbol="globals/Rez/Fonts"/>
+<entry id="8389125" method="true" symbol="onHide"/>
+<entry id="8388635" module="true" symbol="Application"/>
+</symbolTable>
+<localVars>
+<entry arg="true" endPc="268435651" name="angle" stackId="1" startPc="268435609"/>
+<entry arg="true" endPc="268435651" name="raidus" stackId="2" startPc="268435609"/>
+<entry endPc="268435651" name="x" stackId="3" startPc="268435613"/>
+<entry arg="true" endPc="268436037" name="dc" stackId="1" startPc="268435652"/>
+<entry arg="true" endPc="268436080" name="angle" stackId="1" startPc="268436038"/>
+<entry arg="true" endPc="268436080" name="raidus" stackId="2" startPc="268436038"/>
+<entry endPc="268436080" name="y" stackId="3" startPc="268436042"/>
+<entry arg="true" endPc="268436167" name="dc" stackId="1" startPc="268436081"/>
+<entry arg="true" endPc="268436167" name="percentage" stackId="2" startPc="268436081"/>
+<entry arg="true" endPc="268436167" name="x" stackId="3" startPc="268436081"/>
+<entry arg="true" endPc="268436167" name="y" stackId="4" startPc="268436081"/>
+<entry endPc="268436166" name="endAngle" stackId="5" startPc="268436085"/>
+<entry endPc="268436166" name="actualEndAngle" stackId="6" startPc="268436085"/>
+<entry arg="true" endPc="268437256" name="condition" stackId="1" startPc="268436168"/>
+<entry arg="true" endPc="268437273" name="val" stackId="1" startPc="268437257"/>
+<entry arg="true" endPc="268437381" name="dc" stackId="1" startPc="268437295"/>
+<entry arg="true" endPc="268437381" name="percentage" stackId="2" startPc="268437295"/>
+<entry arg="true" endPc="268437381" name="x" stackId="3" startPc="268437295"/>
+<entry arg="true" endPc="268437381" name="y" stackId="4" startPc="268437295"/>
+<entry endPc="268437380" name="endAngle" stackId="5" startPc="268437299"/>
+<entry endPc="268437380" name="actualEndAngle" stackId="6" startPc="268437299"/>
+<entry arg="true" endPc="268438781" name="dc" stackId="1" startPc="268437382"/>
+<entry endPc="268438780" name="clockTime" stackId="2" startPc="268437386"/>
+<entry endPc="268438780" name="hourString" stackId="3" startPc="268437386"/>
+<entry endPc="268438780" name="minuteString" stackId="4" startPc="268437386"/>
+<entry endPc="268438780" name="info" stackId="5" startPc="268437386"/>
+<entry endPc="268438780" name="steps" stackId="6" startPc="268437386"/>
+<entry endPc="268438780" name="stepsGoal" stackId="7" startPc="268437386"/>
+<entry endPc="268438780" name="floorsClimbed" stackId="8" startPc="268437386"/>
+<entry endPc="268438780" name="floorsClimbedGoal" stackId="9" startPc="268437386"/>
+<entry endPc="268438780" name="dateString" stackId="10" startPc="268437386"/>
+<entry endPc="268438780" name="angle" stackId="11" startPc="268437386"/>
+<entry endPc="268438780" name="x" stackId="12" startPc="268437386"/>
+<entry endPc="268438780" name="y" stackId="13" startPc="268437386"/>
+<entry endPc="268438780" name="hr" stackId="14" startPc="268437386"/>
+<entry endPc="268438398" name="stepsProgress" stackId="15" startPc="268438331"/>
+<entry endPc="268438473" name="floorsProgress" stackId="16" startPc="268438406"/>
+<entry endPc="268438780" name="feelLikeTemperature" stackId="17" startPc="268438527"/>
+<entry arg="true" endPc="268438798" name="dc" stackId="1" startPc="268438782"/>
+</localVars>
+<annotations>
+<annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+<annotationEntry annotation="initialized" class="Fonts" module="globals/Rez" symbol="t2"/>
+<annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="bgImage"/>
+<annotationEntry annotation="initialized" class="Fonts" module="globals/Rez" symbol="t1"/>
+<annotationEntry annotation="initialized" class="Fonts" module="globals/Rez" symbol="f2"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+<annotationEntry annotation="initialized" class="Fonts" module="globals/Rez" symbol="f1"/>
+</annotations>
+<dataEntryOffsetMappings>
+<dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+<dataEntry label="globals/thirdfaceApp" offset="158" parentId="globals" symbolId="thirdfaceApp" type="class"/>
+<dataEntry label="globals/Rez" offset="229" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry label="globals/thirdfaceView" offset="308" parentId="globals" symbolId="thirdfaceView" type="class"/>
+<dataEntry label="globals/Rez/Drawables" offset="539" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry label="globals/Rez/Layouts" offset="586" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry label="globals/Rez/Menus" offset="625" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry label="globals/Rez/Fonts" offset="656" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry label="globals/Rez/Strings" offset="719" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry label="globals/Rez/JsonData" offset="758" parentId="Rez" symbolId="JsonData" type="module"/>
+</dataEntryOffsetMappings>
+<functions>
+<functionEntry accessMode="public" endPc="268435482" name="getApp" startPc="268435457">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435501" name="&lt;init&gt;" parent="thirdfaceApp" startPc="268435483">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStart" parent="thirdfaceApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435544" name="getInitialView" parent="thirdfaceApp" startPc="268435502">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435565" name="initialize" parent="thirdfaceApp" startPc="268435545">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStop" parent="thirdfaceApp">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435589" name="&lt;init&gt;" parent="Rez" startPc="268435566">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435608" name="&lt;init&gt;" parent="thirdfaceView" startPc="268435590">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onExitSleep" parent="thirdfaceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268435651" name="getXFromAngle" parent="thirdfaceView" startPc="268435609">
+<param id="angle"/>
+<param id="raidus"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onShow" parent="thirdfaceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436037" name="onLayout" parent="thirdfaceView" startPc="268435652">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436080" name="getYFromAngle" parent="thirdfaceView" startPc="268436038">
+<param id="angle"/>
+<param id="raidus"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268436167" name="drawProgressCCW" parent="thirdfaceView" startPc="268436081">
+<param id="dc"/>
+<param id="percentage"/>
+<param id="x"/>
+<param id="y"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437256" name="getFriendlyCondition" parent="thirdfaceView" startPc="268436168">
+<param id="condition"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437273" name="getAngleFromTime" parent="thirdfaceView" startPc="268437257">
+<param id="val"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onEnterSleep" parent="thirdfaceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437294" name="initialize" parent="thirdfaceView" startPc="268437274">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onHide" parent="thirdfaceView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268437381" name="drawProgressCW" parent="thirdfaceView" startPc="268437295">
+<param id="dc"/>
+<param id="percentage"/>
+<param id="x"/>
+<param id="y"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268438781" name="onUpdate" parent="thirdfaceView" startPc="268437382">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Fonts">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="JsonData">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268438798" name="WatchFace" parent="Layouts" startPc="268438782">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+</functions>
+</debugInfo>
