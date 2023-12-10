@@ -1,7 +1,8 @@
 # Third Face
-- ![image](https://github.com/sudarsanyes/thirdface/blob/main/graphical%20resources/Showcase.png)
-Third face that I have created for my garmin venu plus 2
-This watch face, I believe, looks a bit more modern
+![image](https://github.com/sudarsanyes/thirdface/blob/main/graphical%20resources/Showcase.png)
+
+Third face that I have created for my garmin venu plus 2. This watch face, I believe, looks a bit more modern. It has the following: 
+
 - a modern background with placeholder to show various data fieldsa low poly alpine background
 - digital time at the center
 - steps, climbs, date, and hr on specific placeholders
