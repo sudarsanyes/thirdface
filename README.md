@@ -1,6 +1,6 @@
 # Third Face
 ![image](https://github.com/sudarsanyes/thirdface/blob/main/graphical%20resources/Showcase.png)
-![image](https://github.com/sudarsanyes/thirdface/blob/main/graphical%20resources/Showcase with Annotations.png)
+![image](https://github.com/sudarsanyes/thirdface/blob/main/graphical%20resources/Showcase%20with%20Annotations.png)
 
 Third face that I have created for my garmin venu plus 2. This watch face, I believe, looks a bit more modern. It has the following: 
 
