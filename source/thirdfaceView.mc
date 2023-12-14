@@ -4,12 +4,67 @@ import Toybox.System;
 import Toybox.WatchUi;
 using Toybox.Time.Gregorian;
 
+class thirdFaceDelegate extends WatchUi.WatchFaceDelegate {
+
+    function initialize() {
+        WatchFaceDelegate.initialize();
+    }
+
+    function onPress(clickEvent as WatchUi.ClickEvent) {
+        var tapCoordinates = clickEvent.getCoordinates();
+        var tapX = tapCoordinates[0];
+        var tapY = tapCoordinates[1];
+        var tapFlag = true;
+        System.println("Requesting an app to launch...");
+        System.println(tapX + "  "  + tapY + "  " + tapFlag);
+        try {
+            if (tapX > 171 && tapX < 246 && tapY > 17 && tapY < 88) {
+                System.println("Launching the body battery...");
+                var app = new Complications.Id(Complications.COMPLICATION_TYPE_BODY_BATTERY);
+                Complications.exitTo(app);
+            } else if(tapX > 324 && tapX < 380 && tapY > 109 && tapY < 158) {
+                System.println("Launching the steps...");
+                var app = new Complications.Id(Complications.COMPLICATION_TYPE_STEPS);
+                Complications.exitTo(app);
+            } else if(tapX > 41 && tapX < 98 && tapY > 262 && tapY < 318) {
+                System.println("Launching the floors climbed...");
+                var app = new Complications.Id(Complications.COMPLICATION_TYPE_FLOORS_CLIMBED);
+                Complications.exitTo(app);
+            } else if(tapX > 171 && tapX < 248 && tapY > 324 && tapY < 398) {
+                System.println("Launching heart rate...");
+                var app = new Complications.Id(Complications.COMPLICATION_TYPE_HEART_RATE);
+                Complications.exitTo(app);
+            } else if(tapX > 47 && tapX < 127 && tapY > 193 && tapY < 219) {
+                System.println("Launching today's weather...");
+                var app = new Complications.Id(Complications.COMPLICATION_TYPE_HIGH_LOW_TEMPERATURE);
+                Complications.exitTo(app);
+            } else if(tapX > 178 && tapX < 237 && tapY > 184 && tapY < 234) {
+                System.println("Launching sun rise and set app...");
+                var app = new Complications.Id(Complications.COMPLICATION_TYPE_SUNSET);
+                Complications.exitTo(app);
+            }  else if(tapX > 243 && tapX < 386 && tapY > 188 && tapY < 209) {
+                System.println("Launching weather...");
+                var app = new Complications.Id(Complications.COMPLICATION_TYPE_FORECAST_WEATHER_3DAY);
+                Complications.exitTo(app);
+            } else {
+                System.println("No app to lauch!");
+            }
+        } catch (ex) {
+            System.println("Unable to launch the specified app.");
+        }
+
+        return true;
+    }
+}
+
 class thirdfaceView extends WatchUi.WatchFace {
 
     var bg;
     var t1, t2, f1, f2;
     var faceRadius, viewWidth, viewHeight, viewXCenter, viewYCenter;
     var hrIterator;
+    var calInfo;
+    var batt;
 
     function initialize() {
         WatchFace.initialize();
@@ -29,6 +84,9 @@ class thirdfaceView extends WatchUi.WatchFace {
         viewHeight = dc.getHeight();
         viewXCenter = viewWidth / 2;
         viewYCenter = viewHeight / 2;
+
+        calInfo = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
+        batt = System.getSystemStats().battery;
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -50,6 +108,9 @@ class thirdfaceView extends WatchUi.WatchFace {
         var hourString = Lang.format("$1$", [clockTime.hour.format("%02d")]);
         var minuteString = Lang.format("$1$", [clockTime.min.format("%02d")]);
         var info = ActivityMonitor.getInfo();
+
+        // Draw the moon
+        drawMoon(dc, calInfo.day, calInfo.month, calInfo.year, viewXCenter, viewYCenter);
 
         // Steps
         var steps = info.steps;
@@ -93,19 +154,34 @@ class thirdfaceView extends WatchUi.WatchFace {
 
         // Draw the progressbars
         dc.setColor(0xffffff, 0xffffff);
-        // Top-Right
+        // Top-Right / Steps
         if(stepsGoal != null) {
             var stepsProgress = (steps * 100 ) / stepsGoal;
             if(stepsProgress != 0) {
-                drawProgressCW(dc, stepsProgress, viewXCenter + 142, viewYCenter - 77);
+                drawProgressCW(dc, stepsProgress, 25, 4, viewXCenter + 142, viewYCenter - 77);
             }
         }
-        // Bottom-Left
+        // Bottom-Left / Steps Climbed
         if(floorsClimbedGoal != null) {
             var floorsProgress = (floorsClimbed * 100 ) / floorsClimbedGoal;
             if(floorsProgress != 0) {
-                drawProgressCCW(dc, floorsProgress, viewXCenter - 138, viewYCenter + 82);
+                drawProgressCCW(dc, floorsProgress, 25, 4, viewXCenter - 138, viewYCenter + 82);
             }
+        }
+        // Draw top / Body Battery
+        var bb = null;
+        if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getBodyBatteryHistory)) {
+            bb = Toybox.SensorHistory.getBodyBatteryHistory({});
+            if (bb != null) {
+                bb = bb.next();
+            }
+            if (bb != null) {
+                bb = bb.data;
+            }
+        }
+        if(bb != null) {
+            dc.setColor(0x1C2833, -1);
+            drawProgressCW(dc, bb, 40, 4, 210, 55);
         }
 
         // Draw the weather
@@ -116,7 +192,74 @@ class thirdfaceView extends WatchUi.WatchFace {
             dc.setColor(0xD27628, Graphics.COLOR_TRANSPARENT);
             dc.drawText(viewXCenter + 105, viewYCenter - 20, f2, getFriendlyCondition(Weather.getCurrentConditions().condition), Graphics.TEXT_JUSTIFY_CENTER);
         }
+
+        // Draw the battery bar
+        dc.setColor(0xffffff, -1);
+        drawProgressCW(dc, batt, (viewWidth / 2), 9, viewXCenter, viewYCenter);
     }
+
+    function getJulianDate(d as Number, m as Number, y as Number) { 
+        var mm, yy;
+        var k1, k2, k3;
+        var j;
+
+        yy = y - ((12 - m) / 10);
+        mm = m + 9;
+        if (mm >= 12) {
+            mm = mm - 12;
+        }
+        k1 = (365.25 * (yy + 4712));
+        k2 = (30.6001 * mm + 0.5);
+        k3 = (((yy / 100) + 49) * 0.75) - 38;
+        // 'j' for dates in Julian calendar:
+        j = k1 + k2 + d + 59;
+        if (j > 2299160) {
+            // For Gregorian calendar:
+            j = j - k3; // 'j' is the Julian date at 12h UT (Universal Time)
+        }
+        return j; 
+    }
+
+    function getMoonAge(d as Number, m as Number, y as Number) { 
+        var j = getJulianDate(d, m, y);
+        var ag;
+        //Calculate the approximate phase of the moon
+        var ip = (j + 4.867) / 29.53059;
+        ip = ip - Math.floor(ip); 
+        //After several trials I've seen to add the following lines, 
+        //which gave the result was not bad 
+        if(ip < 0.5) {
+            ag = ip * 29.53059 + 29.53059 / 2;
+        } else {
+            ag = ip * 29.53059 - 29.53059 / 2;
+        } 
+        // Moon's age in days
+        ag = Math.floor(ag) + 1;
+        return ag;
+    }
+
+    function drawMoon(dc as Dc, dd, mm, yy, x, y) {
+		var A = getMoonAge(dd, mm, yy);
+        if (false) 
+        { 
+            A = 29.53 - A; 
+        }
+		var w = 30;
+		var F = 14.765, Q = F/2.0, Q2 = F+Q;
+		
+		var s=A<F ? 0:180;
+		dc.setPenWidth(w);
+        dc.setColor(0xFFFFFF, -1);
+		dc.drawArc(x, y, w/2, Graphics.ARC_CLOCKWISE, 270+s, 90+s);
+		var p = w/Q*(A>F ? A-F:A);
+        p = w - p;
+		var c = A<Q||A>Q2? 0:0xFFFFFF;
+		dc.setPenWidth(2);
+        dc.setColor(c, -1);
+		dc.fillEllipse(x, y, p.abs(), w);
+		dc.setColor(0xFFFFFF, -1);
+		dc.drawCircle(x, y, w);
+	}
 
     function getFriendlyCondition(condition as Number) {
         if (condition == 0) { 
@@ -286,20 +429,20 @@ class thirdfaceView extends WatchUi.WatchFace {
         }
     }
 
-    // Draw the progress as an arc oin clockwise direction. dc is Drawing Context. percentage is the progress in %. X for x-asis. Y for y-axis. 
-    function drawProgressCW(dc as Dc, percentage as Number, x as Number, y as Number) {
+    // Draw the progress as an arc oin clockwise direction. dc is Drawing Context. percentage is the progress in %. Radius of the arc. pen as Pen Width. X for x-asis. Y for y-axis. 
+    function drawProgressCW(dc as Dc, percentage as Number, rad as Number, pen as Number, x as Number, y as Number) {
         var endAngle = ((percentage * 360) / 100);
         var actualEndAngle = 360 - (endAngle - 90);
-        dc.setPenWidth(4);
-        dc.drawArc(x, y, 25, Graphics.ARC_CLOCKWISE, 90, actualEndAngle);
+        dc.setPenWidth(pen);
+        dc.drawArc(x, y, rad, Graphics.ARC_CLOCKWISE, 90, actualEndAngle);
     }
 
-    // Draw the progress as an arc in counter clockwise direction. dc is Drawing Context. percentage is the progress in %. X for x-asis. Y for y-axis. 
-    function drawProgressCCW(dc as Dc, percentage as Number, x as Number, y as Number) {
+    // Draw the progress as an arc in counter clockwise direction. dc is Drawing Context. percentage is the progress in %. Radius of the arc. pen as Pen Width. X for x-asis. Y for y-axis. 
+    function drawProgressCCW(dc as Dc, percentage as Number, rad as Number, pen as Number, x as Number, y as Number) {
         var endAngle = ((percentage * 360) / 100);
         var actualEndAngle = 360 - (270 - endAngle);
-        dc.setPenWidth(4);
-        dc.drawArc(x, y, 25, Graphics.ARC_COUNTER_CLOCKWISE, 90, actualEndAngle);
+        dc.setPenWidth(pen);
+        dc.drawArc(x, y, rad, Graphics.ARC_COUNTER_CLOCKWISE, 90, actualEndAngle);
     }
 
     // Get the angle from time (val is the sec, min, or hour). 

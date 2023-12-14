@@ -32,12 +32,16 @@ C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceApp_mc_7_26_stop:
     function getInitialView() as Array<Views or InputDelegates> or Null {
 C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceApp_mc_20_65_start:
 [ "C:\SudarsanSRINIVASAN\dev\thirdface\source\thirdfaceApp.mc" 21 8 ]
-        %tmp.1 = newa Array<Views or InputDelegates> 1;
+        %tmp.1 = newa Array<Views or InputDelegates> 2;
         %tmp.5 = getv ? :thirdfaceView;
         %tmp.2 = newc %tmp.5 ();
         %tmp.6 = dup %tmp.1;
         %tmp.7 = aputv %tmp.6 0 %tmp.2;
-        ret %tmp.7;
+        %tmp.11 = getv ? :thirdFaceDelegate;
+        %tmp.8 = newc %tmp.11 ();
+        %tmp.12 = dup %tmp.7;
+        %tmp.13 = aputv %tmp.12 1 %tmp.8;
+        ret %tmp.13;
 C_SudarsanSRINIVASAN_dev_thirdface_source_thirdfaceApp_mc_20_65_stop:
     }
 }

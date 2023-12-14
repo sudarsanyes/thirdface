@@ -18,7 +18,7 @@ class thirdfaceApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new thirdfaceView() ] as Array<Views or InputDelegates>;
+        return [ new thirdfaceView(), new thirdFaceDelegate() ] as Array<Views or InputDelegates>;
     }
 
 }
