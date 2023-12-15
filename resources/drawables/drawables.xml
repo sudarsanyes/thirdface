@@ -1,4 +1,14 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
     <bitmap id="bgImage" filename="bg.png" dithering="none" />
+    <bitmap id="phase0" filename="0.png" dithering="none" />
+    <bitmap id="phase1" filename="1.png" dithering="none" />
+    <bitmap id="phase2" filename="2.png" dithering="none" />
+    <bitmap id="phase3" filename="3.png" dithering="none" />
+    <bitmap id="phase4" filename="4.png" dithering="none" />
+    <bitmap id="phase5" filename="5.png" dithering="none" />
+    <bitmap id="phase6" filename="6.png" dithering="none" />
+    <bitmap id="phase7" filename="7.png" dithering="none" />
+    <bitmap id="phase8" filename="8.png" dithering="none" />
+    <bitmap id="phase9" filename="9.png" dithering="none" />
 </drawables>

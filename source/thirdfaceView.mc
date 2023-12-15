@@ -60,6 +60,7 @@ class thirdFaceDelegate extends WatchUi.WatchFaceDelegate {
 class thirdfaceView extends WatchUi.WatchFace {
 
     var bg;
+    var phase0, phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8, phase9;
     var t1, t2, f1, f2;
     var faceRadius, viewWidth, viewHeight, viewXCenter, viewYCenter;
     var hrIterator;
@@ -78,6 +79,17 @@ class thirdfaceView extends WatchUi.WatchFace {
         t2 = Toybox.WatchUi.loadResource(Rez.Fonts.t2);
         f1 = Toybox.WatchUi.loadResource(Rez.Fonts.f1);
         f2 = Toybox.WatchUi.loadResource(Rez.Fonts.f2);
+
+        phase0 = Toybox.WatchUi.loadResource(Rez.Drawables.phase0);
+        phase1 = Toybox.WatchUi.loadResource(Rez.Drawables.phase1);
+        phase2 = Toybox.WatchUi.loadResource(Rez.Drawables.phase2);
+        phase3 = Toybox.WatchUi.loadResource(Rez.Drawables.phase3);
+        phase4 = Toybox.WatchUi.loadResource(Rez.Drawables.phase4);
+        phase5 = Toybox.WatchUi.loadResource(Rez.Drawables.phase5);
+        phase6 = Toybox.WatchUi.loadResource(Rez.Drawables.phase6);
+        phase7 = Toybox.WatchUi.loadResource(Rez.Drawables.phase7);
+        phase8 = Toybox.WatchUi.loadResource(Rez.Drawables.phase8);
+        phase9 = Toybox.WatchUi.loadResource(Rez.Drawables.phase9);
 
         faceRadius = dc.getWidth() / 2;
         viewWidth = dc.getWidth();
@@ -110,7 +122,7 @@ class thirdfaceView extends WatchUi.WatchFace {
         var info = ActivityMonitor.getInfo();
 
         // Draw the moon
-        drawMoon(dc, calInfo.day, calInfo.month, calInfo.year, viewXCenter, viewYCenter);
+        drawMoon(dc, calInfo.day, calInfo.month, calInfo.year, viewXCenter - 45, viewYCenter - 45);
 
         // Steps
         var steps = info.steps;
@@ -194,6 +206,9 @@ class thirdfaceView extends WatchUi.WatchFace {
         }
 
         // Draw the battery bar
+        dc.setColor(0x000000, -1);
+        dc.setPenWidth(9);
+        dc.drawCircle(viewXCenter, viewYCenter, (viewWidth / 2));
         dc.setColor(0xffffff, -1);
         drawProgressCW(dc, batt, (viewWidth / 2), 9, viewXCenter, viewYCenter);
     }
@@ -226,8 +241,6 @@ class thirdfaceView extends WatchUi.WatchFace {
         //Calculate the approximate phase of the moon
         var ip = (j + 4.867) / 29.53059;
         ip = ip - Math.floor(ip); 
-        //After several trials I've seen to add the following lines, 
-        //which gave the result was not bad 
         if(ip < 0.5) {
             ag = ip * 29.53059 + 29.53059 / 2;
         } else {
@@ -238,10 +251,36 @@ class thirdfaceView extends WatchUi.WatchFace {
         return ag;
     }
 
+    // Draws a moon using predefined bitmaps (pngs) that matches the age. dc is Dc; dd is today; mm is this month; yy is this year; x is the x pos; y is the y pos; 
     function drawMoon(dc as Dc, dd, mm, yy, x, y) {
 		var A = getMoonAge(dd, mm, yy);
-        if (false) 
-        { 
+        if(A == 1 || A == 2) {
+            dc.drawBitmap(x, y, phase0);
+        } else if(A == 3 || A == 4 || A == 5 || A == 6) {
+            dc.drawBitmap(x, y, phase1);
+        } else if(A == 7 || A == 8 || A == 9) {
+            dc.drawBitmap(x, y, phase2);
+        } else if(A == 10 || A == 11 || A == 12) {
+            dc.drawBitmap(x, y, phase3);
+        } else if(A == 13 || A == 14 || A == 15) {
+            dc.drawBitmap(x, y, phase4);
+        } else if(A == 16 || A == 17 || A == 18) {
+            dc.drawBitmap(x, y, phase5);
+        } else if(A == 19 || A == 20 || A == 21) {
+            dc.drawBitmap(x, y, phase6);
+        } else if(A == 22 || A == 23 || A == 24) {
+            dc.drawBitmap(x, y, phase7);
+        } else if(A == 25 || A == 26 || A == 27) {
+            dc.drawBitmap(x, y, phase8);
+        } else if(A == 28 || A == 29 || A == 30) {
+            dc.drawBitmap(x, y, phase9);
+        }
+	}
+
+    // Draws a moon as vector that matches the age. dc is Dc; dd is today; mm is this month; yy is this year; x is the x pos; y is the y pos; 
+    function drawMoonAsVector(dc as Dc, dd, mm, yy, x, y) {
+		var A = getMoonAge(dd, mm, yy);
+        if (false) { 
             A = 29.53 - A; 
         }
 		var w = 30;
@@ -259,8 +298,9 @@ class thirdfaceView extends WatchUi.WatchFace {
 		dc.fillEllipse(x, y, p.abs(), w);
 		dc.setColor(0xFFFFFF, -1);
 		dc.drawCircle(x, y, w);
-	}
+    }
 
+    // Gets the forecast condition in a friendlier way. 
     function getFriendlyCondition(condition as Number) {
         if (condition == 0) { 
             return "CLEAR SKIES";
