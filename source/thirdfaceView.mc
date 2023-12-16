@@ -59,7 +59,8 @@ class thirdFaceDelegate extends WatchUi.WatchFaceDelegate {
 
 class thirdfaceView extends WatchUi.WatchFace {
 
-    var bg;
+    var bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bgToUse;
+    var color1, color2;
     var phase0, phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8, phase9;
     var t1, t2, f1, f2;
     var faceRadius, viewWidth, viewHeight, viewXCenter, viewYCenter;
@@ -74,7 +75,17 @@ class thirdfaceView extends WatchUi.WatchFace {
     // Load your resources here
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
-        bg = Toybox.WatchUi.loadResource(Rez.Drawables.bgImage);
+        
+        bg1 = Toybox.WatchUi.loadResource(Rez.Drawables.bg1);
+        bg2 = Toybox.WatchUi.loadResource(Rez.Drawables.bg2);
+        bg3 = Toybox.WatchUi.loadResource(Rez.Drawables.bg3);
+        bg4 = Toybox.WatchUi.loadResource(Rez.Drawables.bg4);
+        bg5 = Toybox.WatchUi.loadResource(Rez.Drawables.bg5);
+        bg6 = Toybox.WatchUi.loadResource(Rez.Drawables.bg6);
+        bg7 = Toybox.WatchUi.loadResource(Rez.Drawables.bg7);
+        bg8 = Toybox.WatchUi.loadResource(Rez.Drawables.bg8);
+        bg9 = Toybox.WatchUi.loadResource(Rez.Drawables.bg9);
+
         t1 = Toybox.WatchUi.loadResource(Rez.Fonts.t1);
         t2 = Toybox.WatchUi.loadResource(Rez.Fonts.t2);
         f1 = Toybox.WatchUi.loadResource(Rez.Fonts.f1);
@@ -112,8 +123,47 @@ class thirdfaceView extends WatchUi.WatchFace {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
 
+        var theme = getApp().getProperty("WatchFaceTheme");
+        if(theme == 1) {
+            bgToUse = bg1;
+            color1 = 0x64413D;
+            color2 = 0x74C696;
+        } else if(theme == 2) {
+            bgToUse = bg2;
+            color1 = 0x4D3665;
+            color2 = 0xC5C170;
+        } else if(theme == 3) {
+            bgToUse = bg3;
+            color1 = 0x234364;
+            color2 = 0xC8894E;
+        } else if(theme == 4) {
+            bgToUse = bg4;
+            color1 = 0x094B34;
+            color2 = 0xDE7869;
+        } else if(theme == 5) {
+            bgToUse = bg5;
+            color1 = 0x4B443E;
+            color2 = 0x4BBBE0;
+        } else if(theme == 6) {
+            bgToUse = bg6;
+            color1 = 0x090C0A;
+            color2 = 0x177870;
+        } else if(theme == 7) {
+            bgToUse = bg7;
+            color1 = 0x090C0A;
+            color2 = 0x8D908E;
+        } else if(theme == 8) {
+            bgToUse = bg8;
+            color1 = 0x090C0A;
+            color2 = 0x21793B;
+        } else if(theme == 9) {
+            bgToUse = bg9;
+            color1 = 0x090C0A;
+            color2 = 0x627935;
+        }
+
         // Draw the background image
-        dc.drawBitmap(0, 0, bg);
+        dc.drawBitmap(0, 0, bgToUse);
 
         // Get the time and other field parameters
         var clockTime = System.getClockTime();
@@ -137,30 +187,30 @@ class thirdfaceView extends WatchUi.WatchFace {
         var angle = (getAngleFromTime(clockTime.sec) - 90);
         var x = getXFromAngle(angle, 40);
         var y = getYFromAngle(angle, 40) - 152;
-        dc.setColor(0x1C2833, 0x1C2833);
+        dc.setColor(color1, color1);
         dc.fillCircle(x, y, 9);
 
         // Draw the seconds (right)
         x = getXFromAngle(angle - 180, 40);
         y = getYFromAngle(angle -180, 40) + 152;
-        dc.setColor(0xD27628, 0xD27628);
+        dc.setColor(color2, color2);
         dc.fillCircle(x, y, 9);
 
         // Draw the time
-        dc.setColor(0x1C2833, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(color1, Graphics.COLOR_TRANSPARENT);
         dc.drawText(viewXCenter - 100, viewYCenter - 180, t1, hourString, Graphics.TEXT_JUSTIFY_CENTER);
-        dc.setColor(0xD27628, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(color2, Graphics.COLOR_TRANSPARENT);
         dc.drawText(viewXCenter + 100, viewYCenter - 60, t1, minuteString, Graphics.TEXT_JUSTIFY_CENTER);
 
         // Date (top)
-        dc.setColor(0xD27628, Graphics.COLOR_TRANSPARENT);
+        dc.setColor(color2, Graphics.COLOR_TRANSPARENT);
         dc.drawText(viewXCenter, viewYCenter - 165, f2, dateString, Graphics.TEXT_JUSTIFY_CENTER);
 
         // Heart Rate (bottom)
         hrIterator = ActivityMonitor.getHeartRateHistory(null, true);
         var hr = Activity.getActivityInfo().currentHeartRate;
         if (null != hr) {
-            dc.setColor(0x1C2833, Graphics.COLOR_TRANSPARENT);
+            dc.setColor(color1, Graphics.COLOR_TRANSPARENT);
             dc.drawText(viewXCenter, viewYCenter + 139, f2, hr.toString(), Graphics.TEXT_JUSTIFY_CENTER);
         }
 
@@ -192,16 +242,16 @@ class thirdfaceView extends WatchUi.WatchFace {
             }
         }
         if(bb != null) {
-            dc.setColor(0x1C2833, -1);
+            dc.setColor(color1, -1);
             drawProgressCW(dc, bb, 40, 4, 210, 55);
         }
 
         // Draw the weather
         if(Weather.getCurrentConditions() != null && Weather.getCurrentConditions().feelsLikeTemperature != null) {
             var feelLikeTemperature = Lang.format("$1$ DEG C", [Weather.getCurrentConditions().feelsLikeTemperature.toString()]);
-            dc.setColor(0x1C2833, Graphics.COLOR_TRANSPARENT);
+            dc.setColor(color1, Graphics.COLOR_TRANSPARENT);
             dc.drawText(viewXCenter - 120, viewYCenter - 20, f2, feelLikeTemperature, Graphics.TEXT_JUSTIFY_CENTER);
-            dc.setColor(0xD27628, Graphics.COLOR_TRANSPARENT);
+            dc.setColor(color2, Graphics.COLOR_TRANSPARENT);
             dc.drawText(viewXCenter + 105, viewYCenter - 20, f2, getFriendlyCondition(Weather.getCurrentConditions().condition), Graphics.TEXT_JUSTIFY_CENTER);
         }
 
