@@ -19,4 +19,5 @@
     <bitmap id="phase7" filename="7.png" dithering="none" />
     <bitmap id="phase8" filename="8.png" dithering="none" />
     <bitmap id="phase9" filename="9.png" dithering="none" />
+    <bitmap id="success" filename="success.png" dithering="none" />
 </drawables>

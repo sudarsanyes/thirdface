@@ -18,12 +18,17 @@ class thirdfaceApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new thirdfaceView(), new thirdFaceDelegate() ] as Array<Views or InputDelegates>;
+        return [ new thirdfaceView(), new thirdfaceDelegate() ] as Array<Views or InputDelegates>;
     }
 
     // New app settings have been received so trigger a UI update
     function onSettingsChanged() as Void {
         WatchUi.requestUpdate();
+    }
+
+    function getSettingsView() as Array<Views or InputDelegates>? {
+        var menu = new thirdfaceMenu();
+        return [ menu, new thirdfaceMenuDelegate(menu) ];
     }
 }
 

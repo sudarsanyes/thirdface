@@ -4,7 +4,7 @@ import Toybox.System;
 import Toybox.WatchUi;
 using Toybox.Time.Gregorian;
 
-class thirdFaceDelegate extends WatchUi.WatchFaceDelegate {
+class thirdfaceDelegate extends WatchUi.WatchFaceDelegate {
 
     function initialize() {
         WatchFaceDelegate.initialize();
@@ -59,7 +59,7 @@ class thirdFaceDelegate extends WatchUi.WatchFaceDelegate {
 
 class thirdfaceView extends WatchUi.WatchFace {
 
-    var bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bgToUse;
+    var bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bgToUse, success;
     var color1, color2;
     var phase0, phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8, phase9;
     var t1, t2, f1, f2;
@@ -85,6 +85,7 @@ class thirdfaceView extends WatchUi.WatchFace {
         bg7 = Toybox.WatchUi.loadResource(Rez.Drawables.bg7);
         bg8 = Toybox.WatchUi.loadResource(Rez.Drawables.bg8);
         bg9 = Toybox.WatchUi.loadResource(Rez.Drawables.bg9);
+        success = Toybox.WatchUi.loadResource(Rez.Drawables.success);
 
         t1 = Toybox.WatchUi.loadResource(Rez.Fonts.t1);
         t2 = Toybox.WatchUi.loadResource(Rez.Fonts.t2);
@@ -215,19 +216,32 @@ class thirdfaceView extends WatchUi.WatchFace {
         }
 
         // Draw the progressbars
-        dc.setColor(0xffffff, 0xffffff);
         // Top-Right / Steps
         if(stepsGoal != null) {
             var stepsProgress = (steps * 100 ) / stepsGoal;
-            if(stepsProgress != 0) {
+            if(stepsProgress != 0 && stepsProgress < 99) {
+                dc.setColor(0xffffff, 0xffffff);
                 drawProgressCW(dc, stepsProgress, 25, 4, viewXCenter + 142, viewYCenter - 77);
+            }
+            if(stepsProgress >= 100) {
+                dc.setColor(color1, color2);
+                dc.fillCircle(viewXCenter + 142, viewYCenter - 77, 20);
+                dc.drawBitmap(viewXCenter + 129, viewYCenter - 90, success);
+                dc.setColor(color1, Graphics.COLOR_TRANSPARENT);
             }
         }
         // Bottom-Left / Steps Climbed
         if(floorsClimbedGoal != null) {
             var floorsProgress = (floorsClimbed * 100 ) / floorsClimbedGoal;
             if(floorsProgress != 0) {
-                drawProgressCCW(dc, floorsProgress, 25, 4, viewXCenter - 138, viewYCenter + 82);
+                dc.setColor(0xffffff, 0xffffff);
+                drawProgressCCW(dc, floorsProgress, 25, 4, viewXCenter - 139, viewYCenter + 82);
+            }
+            if(floorsProgress >= 100) {
+                dc.setColor(color2, color1);
+                dc.fillCircle(viewXCenter - 138, viewYCenter + 82, 20);
+                dc.drawBitmap(viewXCenter - 153, viewYCenter + 69, success);
+                dc.setColor(color1, Graphics.COLOR_TRANSPARENT);
             }
         }
         // Draw top / Body Battery
